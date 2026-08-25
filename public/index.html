@@ -366,8 +366,10 @@ figure { margin: 0; }
 .rs { margin: 3.5rem 0 0; }
 .r {
   display: grid;
-  grid-template-columns: clamp(3.4rem, 9vw, 6.5rem) 1fr;
-  gap: 1.4rem clamp(1.2rem, 3vw, 2.6rem);
+  /* auto, not a fixed width: the column hugs the widest digit so the number
+     sits with its heading instead of stranded across ~100px of dead space. */
+  grid-template-columns: auto 1fr;
+  gap: 1.4rem clamp(1rem, 2.2vw, 1.9rem);
   padding: clamp(1.4rem, 3vw, 2.2rem) 0;
   border-top: 1px solid var(--rule);
   align-items: baseline;
@@ -379,6 +381,13 @@ figure { margin: 0; }
   letter-spacing: -.05em;
   line-height: .85;
   color: var(--ventral);
+  /* proportional figures: tabular ones centre "1" in a full-width slot, so it
+     starts further right than "4" and the left margin goes ragged. */
+  font-variant-numeric: proportional-nums;
+  /* Each .r is its own grid, so an `auto` column would size per row and leave
+     the headings ragged. 1ch is the advance of "0" in this same font; the
+     headroom covers the widest digit, and it tracks any font change. */
+  min-width: 1.15ch;
 }
 .r h4 {
   font-size: clamp(1.5rem, 3.8vw, 2.4rem);
