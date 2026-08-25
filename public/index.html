@@ -372,7 +372,10 @@ figure { margin: 0; }
   gap: 1.4rem clamp(1rem, 2.2vw, 1.9rem);
   padding: clamp(1.4rem, 3vw, 2.2rem) 0;
   border-top: 1px solid var(--rule);
-  align-items: baseline;
+  /* centred against the whole heading-plus-description block. Baseline
+     alignment pinned the numeral to the heading and left it floating at the
+     top of the row with all the empty space below it. */
+  align-items: center;
 }
 .r:last-child { border-bottom: 1px solid var(--rule); }
 .r .num {
