@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Befriending Your Nervous System — Deb Dana</title>
+<meta name="description" content="A beginner's guide to Deb Dana's Polyvagal Theory: the three autonomic states, neuroception, story follows state, glimmers, and the four R's.">
+<style>
+:root {
+  color-scheme: light dark;
+
+  --base:      #f7f4ef;
+  --ink:       #17150f;
+  --ink-soft:  #5f584c;
+  --ink-faint: #938a7b;
+  --rule:      rgba(23,21,15,.16);
+  --rule-firm: rgba(23,21,15,.34);
+
+  /* accents used as TYPE on the page background */
+  --ventral:   #12724f;
+  --symp:      #ad5310;
+  --dorsal:    #3a4d80;
+
+  /* flat colour fields. Saturated in both themes, always with dark type on top,
+     so the poster look survives the light/dark switch without a second palette. */
+  --field-v:   #3faa7c;
+  --field-s:   #e08a2e;
+  --field-d:   #7d92cc;
+  --on-field:  #100e0a;
+
+  --serif: Georgia, "Iowan Old Style", "Palatino Linotype", "Times New Roman", serif;
+  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Helvetica, Arial, sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --base:      #0e0d0b;
+    --ink:       #f4f0e8;
+    --ink-soft:  #a79e90;
+    --ink-faint: #6b6357;
+    --rule:      rgba(244,240,232,.16);
+    --rule-firm: rgba(244,240,232,.34);
+
+    --ventral:   #4fc793;
+    --symp:      #f0913f;
+    --dorsal:    #8ba3dd;
+
+    --field-v:   #4fc793;
+    --field-s:   #f0913f;
+    --field-d:   #8ba3dd;
+  }
+}
+
+* { box-sizing: border-box; }
+
+/* `clip`, not `hidden`: hidden would make this a scroll container and, because
+   the other axis then computes to `auto`, break vertical scrolling outright. */
+html { overflow-x: clip; }
+
+body {
+  margin: 0;
+  background: var(--base);
+  color: var(--ink);
+  font-family: var(--sans);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.45;
+}
+
+section {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 9vh 6vw;
+}
+
+.rule-top { border-top: 1px solid var(--rule); }
+
+/* breaks an element out of the centred column to the full viewport width.
+   Width is left auto so the negative margins resolve it, rather than hardcoding
+   100vw and fighting the scrollbar. */
+.bleed {
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+}
+
+/* ---------- type ---------- */
+
+.eyebrow {
+  font-size: clamp(.72rem, 1.4vw, .84rem);
+  font-weight: 700;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin: 0 0 1.6rem;
+}
+
+h1 {
+  font-size: clamp(3rem, 11vw, 8rem);
+  font-weight: 800;
+  letter-spacing: -.045em;
+  line-height: .92;
+  margin: 0;
+}
+
+h2 {
+  font-size: clamp(2.1rem, 6.5vw, 4.6rem);
+  font-weight: 800;
+  letter-spacing: -.038em;
+  line-height: 1.02;
+  margin: 0 0 1.6rem;
+  max-width: 16ch;
+}
+
+.lede {
+  font-family: var(--serif);
+  font-size: clamp(1.15rem, 2.4vw, 1.7rem);
+  line-height: 1.5;
+  color: var(--ink-soft);
+  max-width: 34ch;
+  margin: 0;
+}
+
+.quote {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(1.25rem, 3.2vw, 2.2rem);
+  line-height: 1.35;
+  color: var(--ink);
+  max-width: 26ch;
+  margin: 3rem 0 .8rem;
+}
+
+.attrib {
+  font-size: .8rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  font-weight: 600;
+}
+
+.big-fact {
+  font-size: clamp(2.6rem, 9vw, 6.5rem);
+  font-weight: 800;
+  letter-spacing: -.045em;
+  line-height: 1;
+  margin: 0;
+}
+
+/* ---------- hero ---------- */
+
+.hero {
+  min-height: 92vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 8vh;
+}
+
+.hero .sub {
+  font-family: var(--serif);
+  font-size: clamp(1.1rem, 2.6vw, 1.9rem);
+  color: var(--ink-soft);
+  margin: 2.2rem 0 0;
+  max-width: 30ch;
+  line-height: 1.45;
+}
+
+/* one flush three-colour bar, hard edges */
+.colourbar {
+  display: flex;
+  margin: 3.5rem 0 0;
+  max-width: 520px;
+  height: 18px;
+}
+.colourbar span { flex: 1; }
+.colourbar span:nth-child(1) { background: var(--field-v); }
+.colourbar span:nth-child(2) { background: var(--field-s); }
+.colourbar span:nth-child(3) { background: var(--field-d); }
+
+.scrollcue {
+  margin-top: 6vh;
+  font-size: .78rem;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: .8rem;
+}
+.scrollcue i {
+  display: block; width: 1px; height: 34px;
+  background: var(--ink-faint);
+  animation: cue 2.4s ease-in-out infinite;
+  transform-origin: top;
+}
+@keyframes cue {
+  0%, 100% { transform: scaleY(.35); opacity: .4; }
+  50%      { transform: scaleY(1);   opacity: 1; }
+}
+
+/* ---------- figures ---------- */
+
+figure { margin: 0; }
+
+.fig {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 3rem auto;
+  max-width: 640px;
+  max-height: 68vh;
+  overflow: visible;
+}
+.fig.tall { max-width: 390px; }
+
+.body-outline { fill: none; stroke: var(--ink); stroke-width: 3; opacity: .18; }
+.nerve { fill: none; stroke: var(--ventral); stroke-width: 5; stroke-linecap: round; }
+.nerve.thin { stroke-width: 3.5; opacity: .8; }
+.organ { fill: var(--ventral); }
+.pulse-dot { fill: var(--symp); }
+.stroke-soft { stroke: var(--rule); }
+
+.svg-label {
+  font-family: var(--sans);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: .04em;
+  fill: var(--ink-soft);
+}
+
+.stream {
+  fill: none;
+  stroke-width: 6;
+  stroke-linecap: butt;
+  stroke-dasharray: 14 20;
+  animation: flow 1.8s linear infinite;
+}
+@keyframes flow { to { stroke-dashoffset: -34; } }
+
+/* ---------- the ladder: three flat slabs, hard edges ---------- */
+
+/* margin-top only — the `margin` shorthand would reset the left/right margins
+   that .bleed relies on, and these rules come later in the sheet. */
+.ladder { margin-top: 4rem; }
+
+.slab { color: var(--on-field); }
+.slab.v { background: var(--field-v); }
+.slab.s { background: var(--field-s); }
+.slab.d { background: var(--field-d); }
+
+.slab-inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: clamp(2rem, 4.5vw, 3.4rem) 6vw;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1rem 3rem;
+  align-items: start;
+}
+
+.slab-pos {
+  font-size: .74rem;
+  font-weight: 800;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  margin: 0 0 .9rem;
+  opacity: .62;
+}
+
+.slab h3 {
+  font-size: clamp(1.9rem, 5.5vw, 3.6rem);
+  font-weight: 800;
+  letter-spacing: -.038em;
+  line-height: 1;
+  margin: 0 0 1.1rem;
+}
+
+.slab-says {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(1.1rem, 2.6vw, 1.7rem);
+  line-height: 1.32;
+  margin: 0 0 1rem;
+  max-width: 24ch;
+}
+
+.slab-feels {
+  font-size: clamp(.92rem, 1.9vw, 1.08rem);
+  font-weight: 600;
+  margin: 0;
+  opacity: .78;
+  max-width: 46ch;
+}
+
+.slab-age {
+  font-size: .74rem;
+  font-weight: 800;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  text-align: right;
+  white-space: nowrap;
+  opacity: .62;
+  line-height: 1.7;
+}
+
+@media (max-width: 680px) {
+  .slab-inner { grid-template-columns: 1fr; }
+  .slab-age { text-align: left; }
+}
+
+/* ---------- triptych: same idea, three across ---------- */
+
+.trip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 3.5rem;
+}
+.trip > div {
+  color: var(--on-field);
+  padding: clamp(2.4rem, 4.5vw, 4rem) clamp(1.7rem, 3.4vw, 3rem);
+}
+.trip .v { background: var(--field-v); }
+.trip .s { background: var(--field-s); }
+.trip .d { background: var(--field-d); }
+
+.trip .who {
+  font-size: .74rem;
+  font-weight: 800;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  margin: 0 0 1.4rem;
+  opacity: .62;
+}
+.trip .said {
+  font-family: var(--serif);
+  font-size: clamp(1.05rem, 2.1vw, 1.45rem);
+  line-height: 1.38;
+  margin: 0;
+  max-width: 21ch;
+}
+
+@media (max-width: 760px) {
+  .trip { grid-template-columns: 1fr; }
+}
+
+/* ---------- glimmers: a hairline list, no chips ---------- */
+
+.glim {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 0 clamp(2rem, 5vw, 4.5rem);
+  margin: 3.5rem 0 0;
+}
+.glim p {
+  margin: 0;
+  padding: 1.15rem 0;
+  border-top: 1px solid var(--rule);
+  font-family: var(--serif);
+  font-size: clamp(1.02rem, 2vw, 1.22rem);
+  line-height: 1.35;
+  color: var(--ink);
+}
+
+/* ---------- four R's ---------- */
+
+.rs { margin: 3.5rem 0 0; }
+.r {
+  display: grid;
+  grid-template-columns: clamp(3.4rem, 9vw, 6.5rem) 1fr;
+  gap: 1.4rem clamp(1.2rem, 3vw, 2.6rem);
+  padding: clamp(1.4rem, 3vw, 2.2rem) 0;
+  border-top: 1px solid var(--rule);
+  align-items: baseline;
+}
+.r:last-child { border-bottom: 1px solid var(--rule); }
+.r .num {
+  font-size: clamp(2.4rem, 7vw, 4.6rem);
+  font-weight: 800;
+  letter-spacing: -.05em;
+  line-height: .85;
+  color: var(--ventral);
+}
+.r h4 {
+  font-size: clamp(1.5rem, 3.8vw, 2.4rem);
+  font-weight: 800;
+  letter-spacing: -.03em;
+  margin: 0 0 .4rem;
+  line-height: 1;
+}
+.r p {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: clamp(1rem, 2.1vw, 1.3rem);
+  color: var(--ink-soft);
+  line-height: 1.45;
+  max-width: 40ch;
+}
+
+/* ---------- what helps: whitespace only, no boxes ---------- */
+
+.helps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: clamp(2.2rem, 4.5vw, 3.4rem) clamp(2rem, 5vw, 4.5rem);
+  margin: 3.5rem 0 0;
+}
+.help strong {
+  display: block;
+  font-size: clamp(1.15rem, 2.6vw, 1.5rem);
+  font-weight: 800;
+  letter-spacing: -.02em;
+  margin-bottom: .55rem;
+}
+.help span {
+  font-family: var(--serif);
+  color: var(--ink-soft);
+  font-size: 1.04rem;
+  line-height: 1.45;
+}
+
+/* ---------- breath ---------- */
+
+.breath {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 5.5rem 0 1rem;
+}
+.breath-stage {
+  width: min(340px, 74vw);
+  height: min(340px, 74vw);
+  display: grid;
+  place-items: center;
+  position: relative;
+}
+.breath-ring { position: absolute; inset: 0; border-radius: 50%; border: 1px solid var(--rule-firm); }
+.breath-orb {
+  width: 100%; height: 100%;
+  border-radius: 50%;
+  background: var(--field-v);
+  animation: breathe 12s infinite;
+  will-change: transform;
+}
+@keyframes breathe {
+  0%    { transform: scale(.46); animation-timing-function: cubic-bezier(.42,0,.58,1); }
+  33.3% { transform: scale(1); animation-timing-function: linear; }
+  41.7% { transform: scale(1); animation-timing-function: cubic-bezier(.42,0,.58,1); }
+  91.7% { transform: scale(.46); animation-timing-function: linear; }
+  100%  { transform: scale(.46); }
+}
+
+.breath-word {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-size: clamp(1.3rem, 3.6vw, 2rem);
+  font-weight: 800;
+  letter-spacing: -.02em;
+  color: var(--on-field);
+  opacity: 0;
+}
+.breath-word.w1 { animation: w1 12s infinite; }
+.breath-word.w2 { animation: w2 12s infinite; }
+.breath-word.w3 { animation: w3 12s infinite; }
+.breath-word.w4 { animation: w4 12s infinite; }
+@keyframes w1 { 0%,30% {opacity:1} 33%,100% {opacity:0} }
+@keyframes w2 { 0%,33% {opacity:0} 35%,40% {opacity:1} 42%,100% {opacity:0} }
+@keyframes w3 { 0%,42% {opacity:0} 45%,89% {opacity:1} 92%,100% {opacity:0} }
+@keyframes w4 { 0%,92% {opacity:0} 94%,99% {opacity:1} 100% {opacity:0} }
+
+.breath-caption {
+  margin-top: 2.5rem;
+  font-size: .8rem;
+  font-weight: 700;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+/* ---------- co-regulation waves ---------- */
+
+.wave {
+  fill: none;
+  stroke: var(--ventral);
+  stroke-width: 5;
+  stroke-linecap: round;
+  opacity: 0;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: ripple 3s ease-out infinite;
+}
+@keyframes ripple {
+  0%   { opacity: 0; transform: scaleX(.4); }
+  25%  { opacity: .9; }
+  100% { opacity: 0; transform: scaleX(1.06); }
+}
+
+/* ---------- sources ---------- */
+
+.sources { padding-bottom: 16vh; }
+.sources ul { list-style: none; padding: 0; margin: 2.5rem 0 0; }
+.sources li {
+  padding: 1.1rem 0;
+  border-top: 1px solid var(--rule);
+  font-size: 1.02rem;
+}
+.sources li:last-child { border-bottom: 1px solid var(--rule); }
+.sources a { color: var(--ink); text-decoration-color: var(--ink-faint); text-underline-offset: 4px; }
+.sources a:hover { color: var(--ventral); }
+.sources em { color: var(--ink-soft); font-family: var(--serif); }
+
+@media (prefers-reduced-motion: reduce) {
+  .breath-orb, .breath-word, .stream, .wave, .scrollcue i { animation: none !important; }
+  .breath-orb { transform: scale(.85); }
+  .breath-word.w1 { opacity: 1; }
+}
+</style>
+</head>
+<body>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <p class="eyebrow">Polyvagal theory, for beginners</p>
+  <h1>Befriending<br>your nervous<br>system</h1>
+  <p class="sub">Deb Dana&rsquo;s plain-language guide to why your body reacts the way it does &mdash; and why none of it is your fault.</p>
+  <div class="colourbar"><span></span><span></span><span></span></div>
+  <div class="scrollcue"><i></i> Scroll</div>
+</section>
+
+<!-- ============ 1. THE ONE QUESTION ============ -->
+<section class="rule-top">
+  <p class="eyebrow">01 &nbsp;/&nbsp; The one question</p>
+  <h2>All day, your body is asking one thing.</h2>
+  <p class="lede">Am I safe? It answers long before you notice you asked.</p>
+
+  <figure>
+    <svg class="fig tall" viewBox="0 0 460 620" role="img" aria-label="A simplified human figure with the vagus nerve running from the brainstem down to the heart, lungs, stomach and gut, and up to the eyes, ears and voice.">
+      <defs>
+        <path id="upflow" d="M214,478 C214,446 210,414 210,384 C209,330 214,276 212,224 C211,190 216,162 216,128"/>
+      </defs>
+
+      <circle class="body-outline" cx="216" cy="92" r="58"/>
+      <path class="body-outline" d="M158,164 C140,180 128,228 124,290 C120,356 130,442 140,506 L292,506 C302,442 312,356 308,290 C304,228 292,180 274,164 Z"/>
+      <rect class="body-outline" x="197" y="142" width="38" height="26"/>
+
+      <path class="nerve" d="M216,128 C216,162 211,190 212,224 C214,276 209,330 210,384 C210,414 214,446 214,478"/>
+
+      <path class="nerve thin" d="M216,130 C202,116 192,100 190,84"/>
+      <path class="nerve thin" d="M216,130 C230,116 240,100 242,84"/>
+      <path class="nerve thin" d="M216,132 C196,126 174,114 164,100"/>
+      <path class="nerve thin" d="M216,132 C236,126 258,114 268,100"/>
+
+      <path class="nerve thin" d="M212,238 C194,244 180,256 174,276"/>
+      <path class="nerve thin" d="M213,230 C234,236 250,250 256,270"/>
+      <path class="nerve thin" d="M210,340 C194,348 182,360 178,378"/>
+      <path class="nerve thin" d="M210,396 C224,406 232,420 232,438"/>
+
+      <circle class="organ" cx="172" cy="280" r="9"/>
+      <circle class="organ" cx="258" cy="274" r="9"/>
+      <circle class="organ" cx="176" cy="382" r="9"/>
+      <circle class="organ" cx="233" cy="443" r="9"/>
+      <circle class="organ" cx="190" cy="82" r="7"/>
+      <circle class="organ" cx="242" cy="82" r="7"/>
+      <circle class="organ" cx="162" cy="98" r="7"/>
+      <circle class="organ" cx="270" cy="98" r="7"/>
+
+      <circle class="pulse-dot" r="7">
+        <animateMotion dur="4.2s" repeatCount="indefinite" begin="0s"><mpath href="#upflow"/></animateMotion>
+      </circle>
+      <circle class="pulse-dot" r="7" opacity="0">
+        <set attributeName="opacity" to="1" begin="1.4s" fill="freeze"/>
+        <animateMotion dur="4.2s" repeatCount="indefinite" begin="1.4s"><mpath href="#upflow"/></animateMotion>
+      </circle>
+      <circle class="pulse-dot" r="7" opacity="0">
+        <set attributeName="opacity" to="1" begin="2.8s" fill="freeze"/>
+        <animateMotion dur="4.2s" repeatCount="indefinite" begin="2.8s"><mpath href="#upflow"/></animateMotion>
+      </circle>
+
+      <text class="svg-label" x="20"  y="66">eyes, ears, voice</text>
+      <text class="svg-label" x="330" y="278">heart, lungs</text>
+      <text class="svg-label" x="20"  y="386">stomach</text>
+      <text class="svg-label" x="330" y="447">gut</text>
+      <line class="stroke-soft" x1="118" y1="60" x2="156" y2="86" stroke-width="2"/>
+      <line class="stroke-soft" x1="326" y1="274" x2="268" y2="274" stroke-width="2"/>
+      <line class="stroke-soft" x1="98"  y1="381" x2="166" y2="382" stroke-width="2"/>
+      <line class="stroke-soft" x1="326" y1="442" x2="244" y2="443" stroke-width="2"/>
+    </svg>
+  </figure>
+
+  <p class="lede">This is the vagus nerve. Most of its traffic runs upward, from your organs to your brain. Your gut reports first. Your thinking arrives second.</p>
+
+  <p class="quote">&ldquo;Eighty percent of the information is coming from your body and then being fed up to your brain.&rdquo;</p>
+  <p class="attrib">Deb Dana</p>
+</section>
+
+<!-- ============ 2. NEUROCEPTION ============ -->
+<section class="rule-top">
+  <p class="eyebrow">02 &nbsp;/&nbsp; Neuroception</p>
+  <h2>It listens in three directions at once.</h2>
+  <p class="lede">Not consciously. There is no decision to make. Stephen Porges named this listening <em>neuroception</em>: detection that happens underneath awareness.</p>
+
+  <figure>
+    <svg class="fig" viewBox="0 0 720 470" role="img" aria-label="Three streams of information flowing into a single centre: from inside the body, from the world around you, and from other people.">
+      <text class="svg-label" x="16"  y="34" style="fill: var(--symp)">INSIDE YOU</text>
+      <text class="svg-label" x="16"  y="60">heartbeat, breath, gut</text>
+      <text class="svg-label" x="286" y="34" style="fill: var(--ventral)">AROUND YOU</text>
+      <text class="svg-label" x="286" y="60">sound, light, space</text>
+      <text class="svg-label" x="704" y="34" text-anchor="end" style="fill: var(--dorsal)">BETWEEN YOU</text>
+      <text class="svg-label" x="704" y="60" text-anchor="end">a face, a voice, eye contact</text>
+
+      <path class="stream" style="stroke: var(--symp)"    d="M84,104 C126,196 244,278 344,336"/>
+      <path class="stream" style="stroke: var(--ventral); animation-delay:-.6s" d="M362,104 C362,196 362,276 362,332"/>
+      <path class="stream" style="stroke: var(--dorsal); animation-delay:-1.2s"  d="M640,104 C598,196 480,278 380,336"/>
+
+      <circle cx="362" cy="372" r="36" style="fill: var(--ink)" opacity=".9"/>
+      <circle cx="362" cy="372" r="56" style="fill:none; stroke: var(--ink)" stroke-width="2" opacity=".18"/>
+
+      <text class="svg-label" x="362" y="452" text-anchor="middle">one answer, before you think</text>
+    </svg>
+  </figure>
+
+  <p class="lede">Then it does the simplest arithmetic there is.</p>
+  <p class="big-fact" style="margin-top:2rem; color: var(--ventral)">More safety<br>than danger?</p>
+  <p class="lede" style="margin-top:1.2rem">You stay up.</p>
+  <p class="big-fact" style="margin-top:3rem; color: var(--dorsal)">More danger<br>than safety?</p>
+  <p class="lede" style="margin-top:1.2rem">You go down.</p>
+</section>
+
+<!-- ============ 3. THE LADDER ============ -->
+<section class="rule-top">
+  <p class="eyebrow">03 &nbsp;/&nbsp; The ladder</p>
+  <h2>Down where?</h2>
+  <p class="lede">Dana&rsquo;s picture for this is a ladder. Three rungs. You are always standing on one of them.</p>
+
+  <div class="ladder bleed">
+    <div class="slab v">
+      <div class="slab-inner">
+        <div>
+          <p class="slab-pos">Top rung &middot; ventral vagal</p>
+          <h3>Safe and social</h3>
+          <p class="slab-says">&ldquo;I&rsquo;m OK. The world&rsquo;s safe enough for me to move through.&rdquo;</p>
+          <p class="slab-feels">Warm. Curious. Able to listen, joke, plan, rest, be touched.</p>
+        </div>
+        <div class="slab-age">Newest<br>~200m years<br>mammals only</div>
+      </div>
+    </div>
+
+    <div class="slab s">
+      <div class="slab-inner">
+        <div>
+          <p class="slab-pos">Middle rung &middot; sympathetic</p>
+          <h3>Fight or flight</h3>
+          <p class="slab-says">&ldquo;Something is wrong. I have to do something about it now.&rdquo;</p>
+          <p class="slab-feels">Restless, snappy, racing, braced. Anywhere from mild fidget to full panic.</p>
+        </div>
+        <div class="slab-age">Middle<br>~400m years</div>
+      </div>
+    </div>
+
+    <div class="slab d">
+      <div class="slab-inner">
+        <div>
+          <p class="slab-pos">Bottom rung &middot; dorsal vagal</p>
+          <h3>Shut down</h3>
+          <p class="slab-says">&ldquo;It&rsquo;s too much. There&rsquo;s no point. I need to disappear.&rdquo;</p>
+          <p class="slab-feels">Foggy, flat, heavy, far away. The tortoise pulling into its shell.</p>
+        </div>
+        <div class="slab-age">Oldest<br>~500m years<br>we share it with fish</div>
+      </div>
+    </div>
+  </div>
+
+  <p class="lede" style="margin-top:3.5rem">Notice the order they arrived in. The bottom rung is half a billion years old. The top rung is the newcomer &mdash; and the first thing you lose under pressure.</p>
+</section>
+
+<!-- ============ 4. IN ORDER ============ -->
+<section class="rule-top">
+  <p class="eyebrow">04 &nbsp;/&nbsp; No skipping</p>
+  <h2>You climb it a rung at a time.</h2>
+  <p class="lede">There is no jump from shut down straight back to calm. The way out of the bottom runs through the middle. Collapse has to become movement before movement can become ease.</p>
+
+  <figure>
+    <svg class="fig" viewBox="0 0 620 380" style="max-width:520px" role="img" aria-label="Three stacked bars showing that movement between the states happens in sequence, never skipping the middle one.">
+      <rect x="120" y="20"  width="380" height="76" style="fill: var(--field-v)"/>
+      <text x="150" y="66" style="font-family: var(--sans); font-size:22px; font-weight:800; fill: var(--on-field)">Safe and social</text>
+
+      <rect x="120" y="150" width="380" height="76" style="fill: var(--field-s)"/>
+      <text x="150" y="196" style="font-family: var(--sans); font-size:22px; font-weight:800; fill: var(--on-field)">Fight or flight</text>
+
+      <rect x="120" y="280" width="380" height="76" style="fill: var(--field-d)"/>
+      <text x="150" y="326" style="font-family: var(--sans); font-size:22px; font-weight:800; fill: var(--on-field)">Shut down</text>
+
+      <path d="M74,34 L74,342" style="fill:none; stroke: var(--ink)" stroke-width="4" opacity=".3"/>
+      <path d="M62,326 L74,346 L86,326" style="fill:none; stroke: var(--ink)" stroke-width="4" opacity=".3"/>
+
+      <path d="M546,342 L546,34" style="fill:none; stroke: var(--ventral)" stroke-width="4"/>
+      <path d="M534,50 L546,30 L558,50" style="fill:none; stroke: var(--ventral)" stroke-width="4"/>
+    </svg>
+  </figure>
+
+  <p class="lede">Which is why anger can be a sign of progress, if you have been numb for a while.</p>
+</section>
+
+<!-- ============ 5. STORY FOLLOWS STATE ============ -->
+<section class="rule-top">
+  <p class="eyebrow">05 &nbsp;/&nbsp; Story follows state</p>
+  <h2>Your state picks the story.</h2>
+  <p class="lede">This is Dana&rsquo;s most useful sentence. The body lands somewhere first, and then the mind writes an explanation that fits. Same event, three different truths.</p>
+
+  <p class="big-fact" style="margin-top:3.5rem; font-size:clamp(1.6rem,4.6vw,3rem); color: var(--ink-soft)">A friend hasn&rsquo;t replied to your message.</p>
+
+  <div class="trip bleed">
+    <div class="v">
+      <p class="who">From safe and social</p>
+      <p class="said">&ldquo;They&rsquo;re busy. I&rsquo;ll hear from them.&rdquo;</p>
+    </div>
+    <div class="s">
+      <p class="who">From fight or flight</p>
+      <p class="said">&ldquo;What did I do? I need to fix this right now.&rdquo;</p>
+    </div>
+    <div class="d">
+      <p class="who">From shut down</p>
+      <p class="said">&ldquo;Of course. Nobody really wants me around anyway.&rdquo;</p>
+    </div>
+  </div>
+
+  <p class="lede" style="margin-top:3.5rem">So arguing with the thought rarely works. The thought is a passenger. Move the state and the story changes on its own.</p>
+</section>
+
+<!-- ============ 6. NONE OF IT IS BROKEN ============ -->
+<section class="rule-top">
+  <p class="eyebrow">06 &nbsp;/&nbsp; Why befriend it</p>
+  <h2>Every rung has saved something.</h2>
+  <p class="lede">Shutting down is not a failure of will. It is the oldest protection you own, doing exactly what it evolved to do when fighting and running were not options.</p>
+  <p class="lede" style="margin-top:1.8rem">Dana&rsquo;s word is <em>befriending</em>, and she means it literally. You get to know a friend. You stop demanding they be someone else. Then you keep at it.</p>
+
+  <p class="quote">&ldquo;A friendship is not something you just do. You continue to nurture that friendship.&rdquo;</p>
+  <p class="attrib">Deb Dana</p>
+</section>
+
+<!-- ============ 7. CO-REGULATION ============ -->
+<section class="rule-top">
+  <p class="eyebrow">07 &nbsp;/&nbsp; Co-regulation</p>
+  <h2>You were never meant to do this alone.</h2>
+
+  <figure>
+    <svg class="fig" viewBox="0 0 620 260" style="max-width:560px" role="img" aria-label="Two figures facing each other with waves passing between them.">
+      <circle cx="96"  cy="130" r="46" style="fill: var(--ventral)"/>
+      <circle cx="524" cy="130" r="46" style="fill: var(--ventral)"/>
+      <path class="wave" d="M210,130 C242,84 274,176 310,130 C346,84 378,176 410,130"/>
+      <path class="wave" d="M210,130 C242,84 274,176 310,130 C346,84 378,176 410,130" style="animation-delay:1s"/>
+      <path class="wave" d="M210,130 C242,84 274,176 310,130 C346,84 378,176 410,130" style="animation-delay:2s"/>
+    </svg>
+  </figure>
+
+  <p class="lede">A calm nervous system nearby calms yours. Dana calls this a biological imperative, not a nice extra. Babies cannot regulate alone, and adults never fully outgrow it.</p>
+  <p class="lede" style="margin-top:1.8rem">Co-regulation comes first. Self-regulation is built on top of it. When someone had to learn to soothe themselves too early, self-soothing tends to cost them energy instead of giving it back.</p>
+
+  <p class="quote">&ldquo;We need to feel safe &mdash; but not only safe. We need to feel safe in the arms of another.&rdquo;</p>
+  <p class="attrib">Deb Dana</p>
+</section>
+
+<!-- ============ 8. GLIMMERS ============ -->
+<section class="rule-top">
+  <p class="eyebrow">08 &nbsp;/&nbsp; Glimmers</p>
+  <h2>The opposite of a trigger.</h2>
+  <p class="lede">Dana coined the word. A trigger drops you down the ladder. A glimmer lifts you, half a second at a time. They are small enough to miss for an entire lifetime.</p>
+
+  <div class="glim">
+    <p>Sun through the kitchen window</p>
+    <p>A dog deciding it likes you</p>
+    <p>The first mouthful of coffee</p>
+    <p>Someone saying your name warmly</p>
+    <p>The opening bars of a song you forgot</p>
+    <p>Cold air on your face</p>
+    <p>Getting into a bed you made that morning</p>
+    <p>A stranger holding a door</p>
+  </div>
+
+  <p class="lede" style="margin-top:3.5rem">Noticing them is the training. Each one is a rep.</p>
+</section>
+
+<!-- ============ 9. THE FOUR R'S ============ -->
+<section class="rule-top">
+  <p class="eyebrow">09 &nbsp;/&nbsp; The practice</p>
+  <h2>Four moves, in order.</h2>
+  <p class="lede">Dana teaches this as the four R&rsquo;s. It is the whole method, compressed.</p>
+
+  <div class="rs">
+    <div class="r">
+      <div class="num">1</div>
+      <div>
+        <h4>Recognise</h4>
+        <p>Where am I on the ladder right now? Naming the rung is most of the work.</p>
+      </div>
+    </div>
+    <div class="r">
+      <div class="num">2</div>
+      <div>
+        <h4>Respect</h4>
+        <p>This state is trying to protect me. Fighting it adds a second problem on top of the first.</p>
+      </div>
+    </div>
+    <div class="r">
+      <div class="num">3</div>
+      <div>
+        <h4>Regulate</h4>
+        <p>Do the small physical thing that moves you up a rung. Or borrow someone else&rsquo;s calm.</p>
+      </div>
+    </div>
+    <div class="r">
+      <div class="num">4</div>
+      <div>
+        <h4>Re-story</h4>
+        <p>Now, from higher up the ladder, ask what actually happened. The story will be different.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 10. WHAT HELPS ============ -->
+<section class="rule-top">
+  <p class="eyebrow">10 &nbsp;/&nbsp; What actually moves you</p>
+  <h2>Small, physical, unglamorous.</h2>
+  <p class="lede">None of these are insights. They are things the body does, which is the point. And they are personal &mdash; what lifts one nervous system does nothing for the next.</p>
+
+  <div class="helps">
+    <div class="help"><strong>A longer out-breath</strong><span>Breathe out for longer than you breathe in. The exhale is the part that applies the brake.</span></div>
+    <div class="help"><strong>A sigh</strong><span>You already do this many times an hour. Dana&rsquo;s move is simply to catch one and let it land.</span></div>
+    <div class="help"><strong>Your voice</strong><span>Humming, singing, reading aloud. The nerve runs through your throat, so sound reaches it directly.</span></div>
+    <div class="help"><strong>Movement</strong><span>Walking, shaking out your hands. Imagining the movement counts, if doing it feels too exposed.</span></div>
+    <div class="help"><strong>Outside</strong><span>Nature, Dana says, is reliably good at this &mdash; one of the few things that works for almost everyone.</span></div>
+    <div class="help"><strong>A face</strong><span>Eyes, a familiar voice, a video call. Borrowed regulation is still regulation.</span></div>
+  </div>
+
+  <div class="breath">
+    <div class="breath-stage">
+      <div class="breath-ring"></div>
+      <div class="breath-orb"></div>
+      <div class="breath-word w1">in</div>
+      <div class="breath-word w2">hold</div>
+      <div class="breath-word w3">out</div>
+      <div class="breath-word w4">rest</div>
+    </div>
+    <p class="breath-caption">Four in, one hold, six out</p>
+  </div>
+</section>
+
+<!-- ============ 11. THE SHORT VERSION ============ -->
+<section class="rule-top">
+  <p class="eyebrow">The short version</p>
+  <h2 style="max-width:22ch">Your body decides first, and it is always trying to keep you alive.</h2>
+  <p class="lede">Learn its signals, stop arguing with them, and give it the small physical things it needs to climb back up.</p>
+</section>
+
+<!-- ============ SOURCES ============ -->
+<section class="rule-top sources">
+  <p class="eyebrow">Where this comes from</p>
+  <ul>
+    <li><a href="https://www.soundstrue.com/products/befriending-your-nervous-system">Befriending Your Nervous System: Looking Through the Lens of Polyvagal Theory</a> &mdash; <em>the Sounds True audio program this page is based on</em></li>
+    <li><a href="https://soundstrue.com/a/resources/transcript/deb-dana-befriending-your-nervous-system/">Full interview transcript</a> &mdash; <em>the source of the direct quotes above</em></li>
+    <li><a href="https://www.soundstrue.com/products/anchored">Anchored: How to Befriend Your Nervous System Using Polyvagal Theory</a> &mdash; <em>Dana&rsquo;s 2021 book, the long-form version</em></li>
+    <li><a href="https://www.rhythmofregulation.com/">Rhythm of Regulation</a> &mdash; <em>Dana&rsquo;s own site, where the four R&rsquo;s come from</em></li>
+    <li><a href="https://www.polyvagalinstitute.org/about-deb">Polyvagal Institute</a> &mdash; <em>Dana and Stephen Porges, who developed the underlying theory</em></li>
+    <li><a href="https://therapistuncensored.com/episodes/tu110-story-follows-state-investigating-polyvagal-theory-with-guest-deb-dana/">Story Follows State</a> &mdash; <em>Dana interviewed on the idea in section 05</em></li>
+  </ul>
+</section>
+
+</body>
+</html>

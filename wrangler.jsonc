@@ -1,0 +1,9 @@
+{
+  // Assets-only Worker: no `main`, so no `assets.binding` either — the binding
+  // is only valid alongside a Worker script.
+  "name": "befriending-your-nervous-system",
+  "compatibility_date": "2026-08-25",
+  "assets": {
+    "directory": "./public"
+  }
+}
