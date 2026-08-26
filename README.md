@@ -35,7 +35,7 @@ Deploys to the personal Cloudflare account. Because there is no `main` script, t
 
 The content is drawn from Dana's own words where possible, mainly the [Sounds True interview transcript](https://soundstrue.com/a/resources/transcript/deb-dana-befriending-your-nervous-system/) for the [Befriending Your Nervous System](https://www.soundstrue.com/products/befriending-your-nervous-system) audio program, plus [Anchored](https://www.soundstrue.com/products/anchored) and [Rhythm of Regulation](https://www.rhythmofregulation.com/) for the four R's. Every source is linked at the foot of the page.
 
-Two caveats stated here as well as on the page. The evolutionary dates (~500m / ~400m / ~200m years) are Polyvagal Theory's standard account rather than Dana's own numbers — she says only "hundreds of millions of years" — so they are marked approximate. And Polyvagal Theory has real critics in academic neuroscience even while it is widely used in trauma therapy; this page presents Dana's framework on its own terms and is not a claim that the underlying science is settled.
+Two caveats, carried in the page footer as well as here. The evolutionary dates (~500m / ~400m / ~200m years) are Polyvagal Theory's standard account; Dana herself says only "hundreds of millions of years", so the page marks them approximate. And Polyvagal Theory has real critics in academic neuroscience even while it is widely used in trauma therapy, so the page explains Dana's framework on its own terms and makes no claim that the underlying science is settled.
 
 ## Licence
 
