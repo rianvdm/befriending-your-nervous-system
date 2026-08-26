@@ -12,16 +12,18 @@
   --rule:      rgba(23,21,15,.16);
   --rule-firm: rgba(23,21,15,.34);
 
-  /* accents used as TYPE on the page background */
-  --ventral:   #12724f;
-  --symp:      #ad5310;
-  --dorsal:    #3a4d80;
+  /* Three accents, named a/b/c rather than after any one page's subject matter —
+     each explainer decides what its own three stand for.
+     These are used as TYPE on the page background. */
+  --accent-a:  #12724f;
+  --accent-b:  #ad5310;
+  --accent-c:  #3a4d80;
 
   /* flat colour fields. Saturated in both themes, always with dark type on top,
      so the poster look survives the light/dark switch without a second palette. */
-  --field-v:   #3faa7c;
-  --field-s:   #e08a2e;
-  --field-d:   #7d92cc;
+  --field-a:   #3faa7c;
+  --field-b:   #e08a2e;
+  --field-c:   #7d92cc;
   --on-field:  #100e0a;
 
   --serif: Georgia, "Iowan Old Style", "Palatino Linotype", "Times New Roman", serif;
@@ -37,13 +39,13 @@
     --rule:      rgba(244,240,232,.16);
     --rule-firm: rgba(244,240,232,.34);
 
-    --ventral:   #4fc793;
-    --symp:      #f0913f;
-    --dorsal:    #8ba3dd;
+    --accent-a:  #4fc793;
+    --accent-b:  #f0913f;
+    --accent-c:  #8ba3dd;
 
-    --field-v:   #4fc793;
-    --field-s:   #f0913f;
-    --field-d:   #8ba3dd;
+    --field-a:   #4fc793;
+    --field-b:   #f0913f;
+    --field-c:   #8ba3dd;
   }
 }
 
@@ -168,9 +170,9 @@ h2 {
   height: 18px;
 }
 .colourbar span { flex: 1; }
-.colourbar span:nth-child(1) { background: var(--field-v); }
-.colourbar span:nth-child(2) { background: var(--field-s); }
-.colourbar span:nth-child(3) { background: var(--field-d); }
+.colourbar span:nth-child(1) { background: var(--field-a); }
+.colourbar span:nth-child(2) { background: var(--field-b); }
+.colourbar span:nth-child(3) { background: var(--field-c); }
 
 .scrollcue {
   margin-top: 6vh;
@@ -210,10 +212,10 @@ figure { margin: 0; }
 .fig.tall { max-width: 390px; }
 
 .body-outline { fill: none; stroke: var(--ink); stroke-width: 3; opacity: .18; }
-.nerve { fill: none; stroke: var(--ventral); stroke-width: 5; stroke-linecap: round; }
+.nerve { fill: none; stroke: var(--accent-a); stroke-width: 5; stroke-linecap: round; }
 .nerve.thin { stroke-width: 3.5; opacity: .8; }
-.organ { fill: var(--ventral); }
-.pulse-dot { fill: var(--symp); }
+.organ { fill: var(--accent-a); }
+.pulse-dot { fill: var(--accent-b); }
 .stroke-soft { stroke: var(--rule); }
 
 .svg-label {
@@ -233,6 +235,45 @@ figure { margin: 0; }
 }
 @keyframes flow { to { stroke-dashoffset: -34; } }
 
+/* a thin exploratory line — a sweep, a track, an axis */
+.trace { fill: none; stroke: var(--rule-firm); stroke-width: 2; }
+
+/* a ring that opens outward from a point. Drive it with <animate> in the markup
+   so each page controls its own timing. */
+.halo { fill: none; stroke: var(--accent-b); stroke-width: 3; }
+
+/* ---------- one full-bleed colour field ---------- */
+
+/* the single-block sibling of .slab, for a page whose central picture is one
+   thing rather than a stack. margin-top only, so .bleed keeps its side margins. */
+.panel { margin-top: 4rem; color: var(--on-field); }
+.panel.a { background: var(--field-a); }
+.panel.b { background: var(--field-b); }
+.panel.c { background: var(--field-c); }
+
+.panel-inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: clamp(2.4rem, 5vw, 4rem) 6vw;
+}
+.panel h3 {
+  font-size: clamp(1.7rem, 4.6vw, 3rem);
+  font-weight: 800;
+  letter-spacing: -.035em;
+  line-height: 1.02;
+  margin: 0 0 1.1rem;
+  max-width: 18ch;
+}
+.panel p {
+  font-family: var(--serif);
+  font-size: clamp(1.05rem, 2.2vw, 1.45rem);
+  line-height: 1.4;
+  margin: 0;
+  max-width: 34ch;
+  opacity: .82;
+}
+.panel .fig { margin: 2.6rem auto 0; }
+
 /* ---------- the ladder: three flat slabs, hard edges ---------- */
 
 /* margin-top only — the `margin` shorthand would reset the left/right margins
@@ -240,9 +281,9 @@ figure { margin: 0; }
 .ladder { margin-top: 4rem; }
 
 .slab { color: var(--on-field); }
-.slab.v { background: var(--field-v); }
-.slab.s { background: var(--field-s); }
-.slab.d { background: var(--field-d); }
+.slab.a { background: var(--field-a); }
+.slab.b { background: var(--field-b); }
+.slab.c { background: var(--field-c); }
 
 .slab-inner {
   max-width: 1080px;
@@ -315,9 +356,9 @@ figure { margin: 0; }
   color: var(--on-field);
   padding: clamp(2.4rem, 4.5vw, 4rem) clamp(1.7rem, 3.4vw, 3rem);
 }
-.trip .v { background: var(--field-v); }
-.trip .s { background: var(--field-s); }
-.trip .d { background: var(--field-d); }
+.trip .a { background: var(--field-a); }
+.trip .b { background: var(--field-b); }
+.trip .c { background: var(--field-c); }
 
 .trip .who {
   font-size: .74rem;
@@ -379,7 +420,7 @@ figure { margin: 0; }
   font-weight: 800;
   letter-spacing: -.05em;
   line-height: .85;
-  color: var(--ventral);
+  color: var(--accent-a);
   /* proportional figures: tabular ones centre "1" in a full-width slot, so it
      starts further right than "4" and the left margin goes ragged. */
   font-variant-numeric: proportional-nums;
@@ -445,7 +486,7 @@ figure { margin: 0; }
 .breath-orb {
   width: 100%; height: 100%;
   border-radius: 50%;
-  background: var(--field-v);
+  background: var(--field-a);
   animation: breathe 12s infinite;
   will-change: transform;
 }
@@ -490,7 +531,7 @@ figure { margin: 0; }
 
 .wave {
   fill: none;
-  stroke: var(--ventral);
+  stroke: var(--accent-a);
   stroke-width: 5;
   stroke-linecap: round;
   opacity: 0;
@@ -523,7 +564,7 @@ figure { margin: 0; }
   max-width: 60ch;
 }
 .sources a { color: var(--ink); text-decoration-color: var(--ink-faint); text-underline-offset: 4px; }
-.sources a:hover { color: var(--ventral); }
+.sources a:hover { color: var(--accent-a); }
 .sources em { color: var(--ink-soft); font-family: var(--serif); }
 
 @media (prefers-reduced-motion: reduce) {
@@ -549,7 +590,7 @@ figure { margin: 0; }
   max-width: 20ch;
   transition: color .18s ease;
 }
-.entry:hover h2 { color: var(--ventral); }
+.entry:hover h2 { color: var(--accent-a); }
 .entry-sub {
   font-family: var(--serif);
   font-size: clamp(1.02rem, 2.1vw, 1.35rem);
@@ -578,4 +619,4 @@ figure { margin: 0; }
   color: var(--ink-faint);
   text-decoration: none;
 }
-.backlink:hover { color: var(--ventral); }
+.backlink:hover { color: var(--accent-a); }

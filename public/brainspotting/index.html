@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Where You Look Affects How You Feel — Brainspotting</title>
+<meta name="description" content="A beginner's guide to Brainspotting: how David Grand found it by accident in 2003, what a brainspot is, the three ways of finding one, and how good the evidence actually is.">
+<link rel="stylesheet" href="/assets/explainer.css">
+</head>
+<body>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <a class="backlink" href="/">All explainers</a>
+  <p class="eyebrow">Brainspotting, for beginners</p>
+  <h1>Where you<br>look affects<br>how you feel</h1>
+  <p class="sub">A trauma therapy built entirely on one question: which way are your eyes pointing?</p>
+  <div class="colourbar"><span></span><span></span><span></span></div>
+  <div class="scrollcue"><i></i> Scroll</div>
+</section>
+
+<!-- ============ 1. THE ACCIDENT ============ -->
+<section class="rule-top">
+  <p class="eyebrow">01 &nbsp;/&nbsp; The accident</p>
+  <h2>It was found by mistake, in 2003.</h2>
+  <p class="lede">A sixteen-year-old figure skater, a year of weekly ninety-minute sessions, and one jump she still could not land. Her therapist, a New York psychotherapist called David Grand, was running an EMDR session &mdash; the trauma therapy where you follow the therapist&rsquo;s moving finger with your eyes. Hers reached one point in the air, wobbled hard, and froze.</p>
+
+  <figure>
+    <svg class="fig" viewBox="0 0 720 340" role="img" aria-label="A pointer travelling slowly across a horizontal line, wobbling and stopping at one point, with an eye below looking up at that point.">
+      <defs>
+        <path id="sweep" d="M96,110 L392,110 C404,96 414,126 426,104 C436,90 448,128 458,110 L466,110"/>
+      </defs>
+
+      <line class="trace" x1="96" y1="110" x2="630" y2="110"/>
+      <line class="trace" x1="96" y1="98" x2="96" y2="122"/>
+      <line class="trace" x1="630" y1="98" x2="630" y2="122"/>
+
+      <!-- gaze line, drawn in only once the spot has been found -->
+      <line class="trace" x1="360" y1="228" x2="466" y2="126" opacity="0">
+        <animate attributeName="opacity" dur="7s" repeatCount="indefinite"
+                 values="0;0;.9;.9;0;0" keyTimes="0;.42;.5;.86;.92;1"/>
+      </line>
+
+      <circle cx="466" cy="110" r="9" opacity="0" style="fill: var(--accent-b)">
+        <animate attributeName="opacity" dur="7s" repeatCount="indefinite"
+                 values="0;0;1;1;0;0" keyTimes="0;.40;.46;.86;.92;1"/>
+      </circle>
+      <circle class="halo" cx="466" cy="110" r="12" opacity="0">
+        <animate attributeName="r" dur="7s" repeatCount="indefinite"
+                 values="12;12;56;56" keyTimes="0;.42;.74;1"/>
+        <animate attributeName="opacity" dur="7s" repeatCount="indefinite"
+                 values="0;0;.85;0;0" keyTimes="0;.42;.5;.74;1"/>
+      </circle>
+
+      <circle class="pulse-dot" r="9" opacity="0">
+        <animate attributeName="opacity" dur="7s" repeatCount="indefinite"
+                 values="0;1;1;1;0;0" keyTimes="0;.04;.40;.86;.92;1"/>
+        <animateMotion dur="7s" repeatCount="indefinite" calcMode="linear"
+                       keyPoints="0;1;1;0" keyTimes="0;.40;.92;1">
+          <mpath href="#sweep"/>
+        </animateMotion>
+      </circle>
+
+      <path class="body-outline" d="M292,250 C320,214 400,214 428,250 C400,286 320,286 292,250 Z"/>
+      <circle cx="360" cy="250" r="15" style="fill: var(--ink)" opacity=".5">
+        <animate attributeName="cx" dur="7s" repeatCount="indefinite"
+                 values="352;372;372;352" keyTimes="0;.40;.90;1"/>
+      </circle>
+
+      <text class="svg-label" x="96" y="72">one slow pass, side to side</text>
+      <text class="svg-label" x="500" y="152" style="fill: var(--accent-b)">here</text>
+    </svg>
+  </figure>
+
+  <p class="lede">So he stopped too, and held his finger where it was. For the next ten minutes she worked through material that a year of talking had not reached. She rang him from the rink the following morning: she had landed the triple loop, then landed it again and again.</p>
+
+  <p class="quote">&ldquo;It was like a hand grabbed my wrist and held my finger in place.&rdquo;</p>
+  <p class="attrib">David Grand</p>
+</section>
+
+<!-- ============ 2. WHY EYES ============ -->
+<section class="rule-top">
+  <p class="eyebrow">02 &nbsp;/&nbsp; Why eyes</p>
+  <h2>Looking is a survival move.</h2>
+  <p class="lede">Turning to look is among the oldest things an animal does. A sound, and the head swings round before anything has been decided. Vision is how you check a room, and Grand&rsquo;s argument is that the checking runs deep and fast, underneath the part of you that makes sentences.</p>
+
+  <figure>
+    <svg class="fig" viewBox="0 0 720 380" role="img" aria-label="A diagram of the route Brainspotting proposes: from the eye to the midbrain and down into the body, with a fainter branch up to thinking and language.">
+      <defs>
+        <path id="deep" d="M168,160 C252,160 322,158 358,162 C380,166 390,184 390,206 C390,254 388,292 390,330"/>
+      </defs>
+
+      <!-- the faint branch: up to language -->
+      <path class="nerve thin" style="stroke: var(--ink); opacity:.22" d="M172,142 C258,106 340,74 456,66"/>
+      <rect x="468" y="34" width="232" height="66" style="fill:none; stroke: var(--ink)" stroke-width="2" opacity=".2"/>
+      <text class="svg-label" x="490" y="62" style="fill: var(--ink-faint)">words, story,</text>
+      <text class="svg-label" x="490" y="84" style="fill: var(--ink-faint)">explaining</text>
+
+      <path class="body-outline" d="M56,160 C86,124 156,124 186,160 C156,196 86,196 56,160 Z"/>
+      <circle cx="121" cy="160" r="15" style="fill: var(--ink)" opacity=".5"/>
+
+      <path class="nerve" d="M168,160 C252,160 322,158 358,162 C380,166 390,184 390,206 C390,254 388,292 390,330"/>
+      <circle class="organ" cx="390" cy="232" r="18"/>
+      <circle class="organ" cx="390" cy="330" r="12"/>
+
+      <circle class="pulse-dot" r="7">
+        <animateMotion dur="3.6s" repeatCount="indefinite"><mpath href="#deep"/></animateMotion>
+      </circle>
+      <circle class="pulse-dot" r="7" opacity="0">
+        <set attributeName="opacity" to="1" begin="1.2s" fill="freeze"/>
+        <animateMotion dur="3.6s" repeatCount="indefinite" begin="1.2s"><mpath href="#deep"/></animateMotion>
+      </circle>
+      <circle class="pulse-dot" r="7" opacity="0">
+        <set attributeName="opacity" to="1" begin="2.4s" fill="freeze"/>
+        <animateMotion dur="3.6s" repeatCount="indefinite" begin="2.4s"><mpath href="#deep"/></animateMotion>
+      </circle>
+
+      <text class="svg-label" x="56" y="116">eye</text>
+      <text class="svg-label" x="422" y="238">midbrain</text>
+      <text class="svg-label" x="422" y="336">body</text>
+      <text class="svg-label" x="56" y="366" style="fill: var(--ink-faint)">the route Brainspotting proposes</text>
+    </svg>
+  </figure>
+
+  <p class="lede">Which would make the direction you happen to be looking a piece of live information rather than an accident of where the furniture is.</p>
+
+  <p class="quote">&ldquo;Where we look at different times is not random &mdash; in fact, I believe it is never random.&rdquo;</p>
+  <p class="attrib">David Grand</p>
+</section>
+
+<!-- ============ 3. THE MAP ============ -->
+<section class="rule-top">
+  <p class="eyebrow">03 &nbsp;/&nbsp; The map</p>
+  <h2>Somewhere out there is one point.</h2>
+  <p class="lede">A brainspot is an eye position that lines up with whatever you are carrying. There is no chart to look it up on: up and to the left means one thing for you and something else entirely for the person seen after you. It is only ever the place where, for you, today, the feeling gets loudest.</p>
+
+  <div class="panel a bleed">
+    <div class="panel-inner">
+      <h3>Yours, and only today&rsquo;s.</h3>
+      <p>Find the same spot four sessions running, Grand says, and the fifth will be somewhere else entirely.</p>
+
+      <svg class="fig" viewBox="0 0 720 300" style="max-width:720px" role="img" aria-label="A rectangle standing for the field of vision, with one point clearly marked and several fainter points elsewhere in it.">
+        <rect x="40" y="40" width="640" height="220" style="fill:none; stroke: var(--on-field)" stroke-width="2" opacity=".3"/>
+        <line x1="360" y1="40" x2="360" y2="260" style="stroke: var(--on-field)" stroke-width="1" opacity=".22"/>
+        <line x1="40" y1="150" x2="680" y2="150" style="stroke: var(--on-field)" stroke-width="1" opacity=".22"/>
+
+        <circle cx="176" cy="212" r="7" style="fill: var(--on-field)" opacity=".26"/>
+        <circle cx="292" cy="86"  r="7" style="fill: var(--on-field)" opacity=".26"/>
+        <circle cx="470" cy="228" r="7" style="fill: var(--on-field)" opacity=".26"/>
+        <circle cx="596" cy="118" r="7" style="fill: var(--on-field)" opacity=".26"/>
+
+        <circle cx="516" cy="96" r="15" style="fill: var(--on-field)"/>
+        <circle class="halo" cx="516" cy="96" r="18" style="stroke: var(--on-field)">
+          <animate attributeName="r" dur="3.4s" repeatCount="indefinite" values="18;62"/>
+          <animate attributeName="opacity" dur="3.4s" repeatCount="indefinite" values=".8;0"/>
+        </circle>
+
+        <text class="svg-label" x="40" y="290" style="fill: var(--on-field); opacity:.7">your field of vision</text>
+        <text class="svg-label" x="560" y="102" style="fill: var(--on-field)">today</text>
+      </svg>
+    </div>
+  </div>
+
+  <p class="quote">&ldquo;With brainspotting, each person has their own map.&rdquo;</p>
+  <p class="attrib">David Grand</p>
+</section>
+
+<!-- ============ 4. THREE WAYS IN ============ -->
+<section class="rule-top">
+  <p class="eyebrow">04 &nbsp;/&nbsp; Finding it</p>
+  <h2>Three ways to land on the spot.</h2>
+  <p class="lede">They arrive at the same place: your eyes fixed on one point, and held there. What differs is who does the finding. (Grand swapped his finger for a telescopic pointer early on, since nobody can hold an arm up that long.)</p>
+
+  <div class="ladder bleed">
+    <div class="slab a">
+      <div class="slab-inner">
+        <div>
+          <p class="slab-pos">01 &middot; found from the outside</p>
+          <h3>Outside window</h3>
+          <p class="slab-says">The therapist watches your face while the pointer travels, and stops wherever something flickers.</p>
+          <p class="slab-feels">A blink, a swallow, a lick of the lips, a tilt of the head, eyes that wobble. Grand&rsquo;s original method, and the slowest.</p>
+        </div>
+        <div class="slab-age">The first<br>2003</div>
+      </div>
+    </div>
+
+    <div class="slab b">
+      <div class="slab-inner">
+        <div>
+          <p class="slab-pos">02 &middot; found from the inside</p>
+          <h3>Inside window</h3>
+          <p class="slab-says">The therapist asks where the feeling gets strongest, and you are the one who says.</p>
+          <p class="slab-feels">Left, middle or right; then above eye level, at it, or below. Quicker, because you are reading your own map.</p>
+        </div>
+        <div class="slab-age">The quick one</div>
+      </div>
+    </div>
+
+    <div class="slab c">
+      <div class="slab-inner">
+        <div>
+          <p class="slab-pos">03 &middot; already happening</p>
+          <h3>Gazespotting</h3>
+          <p class="slab-says">Nobody goes looking. You have been talking to a spot on the wall for five minutes.</p>
+          <p class="slab-feels">The last one Grand worked out and, he says, the one he should have seen first. Gentler than the other two.</p>
+        </div>
+        <div class="slab-age">The obvious one</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 5. THE SESSION ============ -->
+<section class="rule-top">
+  <p class="eyebrow">05 &nbsp;/&nbsp; A session</p>
+  <h2>Then almost nothing happens.</h2>
+  <p class="lede">The setup takes a few minutes. After that there is no technique to perform.</p>
+
+  <div class="rs">
+    <div class="r">
+      <div class="num">1</div>
+      <div>
+        <h4>Name it</h4>
+        <p>One thing to work on. A specific moment usually does more than a whole decade.</p>
+      </div>
+    </div>
+    <div class="r">
+      <div class="num">2</div>
+      <div>
+        <h4>Rate it</h4>
+        <p>How strong is it right now, zero to ten? Brainspotting calls this <em>activation</em> deliberately, because plenty of people feel something they would never call distress.</p>
+      </div>
+    </div>
+    <div class="r">
+      <div class="num">3</div>
+      <div>
+        <h4>Locate it</h4>
+        <p>Where is it in your body? Chest, throat, stomach, jaw. That answer anchors everything after it.</p>
+      </div>
+    </div>
+    <div class="r">
+      <div class="num">4</div>
+      <div>
+        <h4>Find the spot</h4>
+        <p>One of the three ways above. A pointer goes up, and stays.</p>
+      </div>
+    </div>
+    <div class="r">
+      <div class="num">5</div>
+      <div>
+        <h4>Stay</h4>
+        <p>Eyes on the spot. Watch whatever turns up and follow it. Speak if you want to; mostly nobody says anything.</p>
+      </div>
+    </div>
+  </div>
+
+  <p class="quote">&ldquo;The brain knows what to do. And 99 percent of the time, it knows what to do better than the therapist does.&rdquo;</p>
+  <p class="attrib">David Grand</p>
+</section>
+
+<!-- ============ 6. BELOW LANGUAGE ============ -->
+<section class="rule-top">
+  <p class="eyebrow">06 &nbsp;/&nbsp; Below the words</p>
+  <h2>You cannot explain your way down.</h2>
+  <p class="lede">The claim underneath all of this is that the worst material sits below language, in the older parts of the brain, where there is no vocabulary and no story available. Talking gets you as far as talking goes.</p>
+
+  <figure>
+    <svg class="fig" viewBox="0 0 640 400" style="max-width:540px" role="img" aria-label="Three stacked bands standing for layers of the brain, with talking reaching only the top band and a fixed gaze reaching all three.">
+      <rect x="150" y="30"  width="360" height="76" style="fill: var(--field-a)"/>
+      <text x="176" y="76" style="font-family: var(--sans); font-size:21px; font-weight:800; fill: var(--on-field)">words and story</text>
+
+      <rect x="150" y="152" width="360" height="76" style="fill: var(--field-b)"/>
+      <text x="176" y="198" style="font-family: var(--sans); font-size:21px; font-weight:800; fill: var(--on-field)">feeling</text>
+
+      <rect x="150" y="274" width="360" height="76" style="fill: var(--field-c)"/>
+      <text x="176" y="320" style="font-family: var(--sans); font-size:21px; font-weight:800; fill: var(--on-field)">the body&rsquo;s own record</text>
+
+      <path d="M104,34 L104,96" style="fill:none; stroke: var(--ink)" stroke-width="4" opacity=".3"/>
+      <path d="M92,80 L104,100 L116,80" style="fill:none; stroke: var(--ink)" stroke-width="4" opacity=".3"/>
+      <text class="svg-label" x="24" y="26" style="fill: var(--ink-faint)">talking</text>
+
+      <path d="M556,34 L556,322" style="fill:none; stroke: var(--accent-b)" stroke-width="4"/>
+      <path d="M544,306 L556,326 L568,306" style="fill:none; stroke: var(--accent-b)" stroke-width="4"/>
+      <text class="svg-label" x="528" y="26" style="fill: var(--accent-b)">a held gaze</text>
+
+      <text class="svg-label" x="150" y="386" style="fill: var(--ink-faint)">what Brainspotting claims</text>
+    </svg>
+  </figure>
+
+  <p class="lede">It is one way to read the skater: a year of good conversation, and the jump exactly where she had left it.</p>
+
+  <p class="quote">&ldquo;At that point, there&rsquo;s no language and there&rsquo;s no story &mdash; it is just all felt sense and body experience.&rdquo;</p>
+  <p class="attrib">David Grand</p>
+</section>
+
+<!-- ============ 7. THE PERSON OPPOSITE ============ -->
+<section class="rule-top">
+  <p class="eyebrow">07 &nbsp;/&nbsp; The person opposite</p>
+  <h2>The pointer is the smaller half.</h2>
+  <p class="lede">Grand calls the working conditions a <em>dual attunement frame</em>: someone tuned to you, while you are tuned to a point in space. He puts the relationship first and tells his trainees so on day one, because the pointer is the thing in the room that looks like it is doing the work.</p>
+
+  <figure>
+    <svg class="fig" viewBox="0 0 720 370" style="max-width:660px" role="img" aria-label="A comet travelling a closed loop with a trailing tail, and a small ring following inside the tail.">
+      <defs>
+        <path id="orbit" d="M360,44 C540,44 664,110 664,164 C664,228 528,282 360,282 C192,282 56,228 56,164 C56,110 180,44 360,44 Z"/>
+      </defs>
+
+      <path class="trace" d="M360,44 C540,44 664,110 664,164 C664,228 528,282 360,282 C192,282 56,228 56,164 C56,110 180,44 360,44 Z" opacity=".45"/>
+
+      <circle r="4" opacity=".24" style="fill: var(--accent-a)">
+        <animateMotion dur="16s" repeatCount="indefinite" begin="0s"><mpath href="#orbit"/></animateMotion>
+      </circle>
+      <circle r="6" opacity=".38" style="fill: var(--accent-a)">
+        <animateMotion dur="16s" repeatCount="indefinite" begin="-.6s"><mpath href="#orbit"/></animateMotion>
+      </circle>
+      <circle r="9" opacity=".56" style="fill: var(--accent-a)">
+        <animateMotion dur="16s" repeatCount="indefinite" begin="-1.2s"><mpath href="#orbit"/></animateMotion>
+      </circle>
+      <circle r="12" opacity=".78" style="fill: var(--accent-a)">
+        <animateMotion dur="16s" repeatCount="indefinite" begin="-1.8s"><mpath href="#orbit"/></animateMotion>
+      </circle>
+      <circle r="17" style="fill: var(--accent-a)">
+        <animateMotion dur="16s" repeatCount="indefinite" begin="-2.5s"><mpath href="#orbit"/></animateMotion>
+      </circle>
+
+      <circle r="9" style="fill:none; stroke: var(--accent-b)" stroke-width="3">
+        <animateMotion dur="16s" repeatCount="indefinite" begin="-.9s"><mpath href="#orbit"/></animateMotion>
+      </circle>
+
+      <circle cx="204" cy="336" r="9" style="fill: var(--accent-a)"/>
+      <text class="svg-label" x="224" y="342">you</text>
+      <circle cx="300" cy="336" r="8" style="fill:none; stroke: var(--accent-b)" stroke-width="3"/>
+      <text class="svg-label" x="320" y="342">the therapist, staying in the tail</text>
+    </svg>
+  </figure>
+
+  <p class="lede">His picture for the relationship is a comet. You are the comet; the therapist&rsquo;s whole job is to keep up.</p>
+
+  <p class="quote">&ldquo;The client is the comet, and the therapist tries to get in the tail of the comet to follow wherever the comet goes.&rdquo;</p>
+  <p class="attrib">David Grand</p>
+</section>
+
+<!-- ============ 8. VOCABULARY ============ -->
+<section class="rule-top">
+  <p class="eyebrow">08 &nbsp;/&nbsp; The vocabulary</p>
+  <h2>A small private language.</h2>
+  <p class="lede">Brainspotting renamed a handful of things other therapies already had words for, and the choices tell you what it thinks it is doing.</p>
+
+  <div class="helps">
+    <div class="help"><strong>Brainspot</strong><span>The eye position that lines up with what you brought in. Yours, on the day.</span></div>
+    <div class="help"><strong>Activation</strong><span>What other approaches call distress. Kept broad on purpose, so it fits people who cannot name the thing they feel.</span></div>
+    <div class="help"><strong>Gazespotting</strong><span>Finding the spot by noticing where someone had already parked their eyes.</span></div>
+    <div class="help"><strong>Focused mindfulness</strong><span>Watching your inside with your outside held still on one point.</span></div>
+    <div class="help"><strong>The tail of the comet</strong><span>Where the therapist belongs: behind you, following, never steering.</span></div>
+    <div class="help"><strong>Resource spot</strong><span>An eye position found by asking where you feel calmest in your body, for people the ordinary version overwhelms.</span></div>
+  </div>
+</section>
+
+<!-- ============ 9. NOTICE IT ============ -->
+<section class="rule-top">
+  <p class="eyebrow">09 &nbsp;/&nbsp; Catch yourself</p>
+  <h2>You have been doing half of it for years.</h2>
+  <p class="lede">The therapy needs a trained therapist and a good reason. The reflex it is built on costs nothing to observe.</p>
+  <p class="lede" style="margin-top:1.8rem">Next time you are thinking hard, or telling someone something that matters, notice where your eyes go. Rarely at them. A spot on the carpet, a corner of the ceiling, held for minutes at a time. Grand spent years of his own analysis staring at one crack in a ceiling, and worked out what he had been doing roughly twenty-five years later.</p>
+
+  <p class="quote">&ldquo;Wherever a person looks, it is not only relevant, it is highly relevant.&rdquo;</p>
+  <p class="attrib">David Grand</p>
+</section>
+
+<!-- ============ 10. UNCERTAINTY ============ -->
+<section class="rule-top">
+  <p class="eyebrow">10 &nbsp;/&nbsp; What nobody knows</p>
+  <h2>He teaches the not knowing.</h2>
+  <p class="lede">Grand takes a name from physics for this and calls it the uncertainty principle. His version: the brain across from you is too complicated to read, so the moment you are sure why something is working, you have stopped paying attention to the person it is happening to.</p>
+  <p class="lede" style="margin-top:1.8rem">It is an unusual thing for the inventor of a method to write into its training.</p>
+
+  <p class="quote">&ldquo;I am pretty convinced that there is a part of this that we are never going to fully understand.&rdquo;</p>
+  <p class="attrib">David Grand</p>
+</section>
+
+<!-- ============ 11. THE SHORT VERSION ============ -->
+<section class="rule-top">
+  <p class="eyebrow">The short version</p>
+  <h2 style="max-width:24ch">Hold your eyes still on one spot, and watch what your body does with the quiet.</h2>
+  <p class="lede">The bet is that the spot matters, and that the part of you doing the healing works better when nobody is giving it directions.</p>
+</section>
+
+<!-- ============ SOURCES ============ -->
+<section class="rule-top sources">
+  <p class="eyebrow">Where this comes from</p>
+  <ul>
+    <li><a href="https://s3.amazonaws.com/nicabm-stealthseminar/Rethinking-trauma-new/David/NICABM-DavidGrand-Transcript2.pdf">Brainspotting: An Evolving, Healing Science for Trauma</a> &mdash; <em>Grand interviewed by Ruth Buczynski for NICABM. Most of the quotes above are from this transcript</em></li>
+    <li><a href="https://brainspotting.com/about-brainspotting/">About Brainspotting</a> &mdash; <em>Grand&rsquo;s own organisation, and the source of &ldquo;where you look affects how you feel&rdquo;</em></li>
+    <li><a href="https://www.psychotherapynetworker.org/article/turning-the-spotlight-on-brainspotting/">Turning the Spotlight on Brainspotting</a> &mdash; <em>Psychotherapy Networker&rsquo;s reported piece, including a session watched from the room</em></li>
+    <li><a href="https://doi.org/10.1016/j.mehy.2013.03.005">Recruiting the midbrain</a> &mdash; <em>Corrigan and Grand, 2013. The proposed mechanism in section 02, offered as a hypothesis</em></li>
+    <li><a href="https://doi.org/10.1007/s00729-025-00275-5">Brainspotting after singular stressful experiences</a> &mdash; <em>Glantschnig, 2025. The strongest trial yet</em></li>
+    <li><a href="https://doi.org/10.3390/ijerph19031142">Psychotherapeutic techniques for distressing memories</a> &mdash; <em>D&rsquo;Antoni and colleagues, 2022, comparing a single session against EMDR</em></li>
+    <li><a href="https://doi.org/10.1016/j.mehy.2023.111229">Hypothesis testing of the adoption of pseudoscientific methods</a> &mdash; <em>McKay and Coreil, 2024, in the same journal that ran the mechanism paper above. Brainspotting researchers <a href="https://doi.org/10.1016/j.mehy.2024.111295">answered them in print</a>, and they <a href="https://doi.org/10.1016/j.mehy.2024.111339">answered back</a></em></li>
+    <li><a href="https://www.psychologytoday.com/us/blog/your-brain-on-food/202505/brainspotting-is-pseudoscience">Brainspotting Is Pseudoscience</a> &mdash; <em>Gary Wenk, neuroscientist, putting the case against</em></li>
+  </ul>
+  <p class="caveat">Brainspotting is thinly evidenced and openly disputed. The strongest study its own developers list is Glantschnig&rsquo;s 2025 trial of a hundred private-practice clients, every one of them seen by the single therapist who ran the study, and her own conclusion is that randomised controlled trials are still needed. D&rsquo;Antoni&rsquo;s 2022 comparison found one session cut distress about as much as a session of EMDR did, but its forty participants were doctors and psychologists recalling upsetting memories, well short of a clinical trial. Against that, McKay and Coreil argued in 2024 that the proposed brain circuitry has no evidence behind it and that the method is built in a way that makes it hard to disprove; brainspotting researchers answered them in the same journal, and the argument is still running. The American Psychological Association&rsquo;s 2025 guideline for treating PTSD in adults does not list brainspotting. This page sets out the method as Grand teaches it.</p>
+</section>
+
+</body>
+</html>
