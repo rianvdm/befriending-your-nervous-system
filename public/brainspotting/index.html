@@ -86,23 +86,24 @@
   <p class="lede">A sound, and your head turns before you have decided anything. Grand says this checking runs through the midbrain, an old part of the brain below the part of you that makes sentences.</p>
 
   <figure>
-    <svg class="fig" viewBox="0 0 720 380" role="img" aria-label="A diagram of the route Brainspotting proposes: from the eye to the midbrain and down into the body, with a fainter branch up to thinking and language.">
+    <svg class="fig" viewBox="0 0 720 380" role="img" aria-label="An eye on the left and two stacked blocks on the right, thinking and words above, old brain and body below. One line runs from the eye, passes under the top block, and lands in the lower one.">
       <defs>
-        <path id="deep" d="M168,160 C252,160 322,158 358,162 C380,166 390,184 390,206 C390,254 388,292 390,330"/>
+        <path id="deep" d="M184,180 C260,180 322,180 342,186 C360,194 362,212 362,266"/>
       </defs>
 
-      <!-- the faint branch: up to language -->
-      <path class="nerve thin" style="stroke: var(--ink); opacity:.22" d="M172,142 C258,106 340,74 456,66"/>
-      <rect x="468" y="34" width="232" height="66" style="fill:none; stroke: var(--ink)" stroke-width="2" opacity=".2"/>
-      <text class="svg-label" x="490" y="62" style="fill: var(--ink-faint)">words, story,</text>
-      <text class="svg-label" x="490" y="84" style="fill: var(--ink-faint)">explaining</text>
+      <!-- the block the route skips -->
+      <rect x="300" y="40" width="380" height="100" style="fill:none; stroke: var(--ink)" stroke-width="2" opacity=".22"/>
+      <text x="330" y="98" style="font-family: var(--sans); font-size:21px; font-weight:800; fill: var(--ink-faint)">thinking, words</text>
 
-      <path class="body-outline" d="M56,160 C86,124 156,124 186,160 C156,196 86,196 56,160 Z"/>
-      <circle cx="121" cy="160" r="15" style="fill: var(--ink)" opacity=".5"/>
+      <!-- the block the route lands in -->
+      <rect x="300" y="220" width="380" height="100" style="fill: var(--field-c)"/>
+      <text x="396" y="278" style="font-family: var(--sans); font-size:21px; font-weight:800; fill: var(--on-field)">old brain, body</text>
 
-      <path class="nerve" d="M168,160 C252,160 322,158 358,162 C380,166 390,184 390,206 C390,254 388,292 390,330"/>
-      <circle class="organ" cx="390" cy="232" r="18"/>
-      <circle class="organ" cx="390" cy="330" r="12"/>
+      <path class="body-outline" d="M54,180 C84,144 154,144 184,180 C154,216 84,216 54,180 Z"/>
+      <circle cx="119" cy="180" r="15" style="fill: var(--ink)" opacity=".5"/>
+
+      <path class="nerve" d="M184,180 C260,180 322,180 342,186 C360,194 362,212 362,266"/>
+      <circle class="organ" cx="362" cy="266" r="11"/>
 
       <circle class="pulse-dot" r="7">
         <animateMotion dur="3.6s" repeatCount="indefinite"><mpath href="#deep"/></animateMotion>
@@ -116,10 +117,9 @@
         <animateMotion dur="3.6s" repeatCount="indefinite" begin="2.4s"><mpath href="#deep"/></animateMotion>
       </circle>
 
-      <text class="svg-label" x="56" y="116">eye</text>
-      <text class="svg-label" x="422" y="238">midbrain</text>
-      <text class="svg-label" x="422" y="336">body</text>
-      <text class="svg-label" x="56" y="366" style="fill: var(--ink-faint)">the route Brainspotting proposes</text>
+      <text class="svg-label" x="54" y="136">eye</text>
+      <text class="svg-label" x="330" y="166" style="fill: var(--accent-b)">skips this</text>
+      <text class="svg-label" x="54" y="366" style="fill: var(--ink-faint)">the route Brainspotting proposes</text>
     </svg>
   </figure>
 
