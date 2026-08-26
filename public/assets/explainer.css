@@ -8,7 +8,7 @@
   --base:      #f7f4ef;
   --ink:       #17150f;
   --ink-soft:  #5f584c;
-  --ink-faint: #938a7b;
+  --ink-faint: #746c60;
   --rule:      rgba(23,21,15,.16);
   --rule-firm: rgba(23,21,15,.34);
 
@@ -35,7 +35,7 @@
     --base:      #0e0d0b;
     --ink:       #f4f0e8;
     --ink-soft:  #a79e90;
-    --ink-faint: #6b6357;
+    --ink-faint: #887f72;
     --rule:      rgba(244,240,232,.16);
     --rule-firm: rgba(244,240,232,.34);
 
@@ -571,6 +571,7 @@ figure { margin: 0; }
   .breath-orb, .breath-word, .stream, .wave, .scrollcue i { animation: none !important; }
   .breath-orb { transform: scale(.85); }
   .breath-word.w1 { opacity: 1; }
+  .wave { opacity: .7; transform: none; }
 }
 
 /* ---------- site index ---------- */
