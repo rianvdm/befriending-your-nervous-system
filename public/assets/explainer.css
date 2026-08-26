@@ -1,0 +1,581 @@
+/* Explainer design system.
+   Shared by every page on the site. Changing a token here changes all of them,
+   which is the point - keep page-specific rules in the page, not in here. */
+
+:root {
+  color-scheme: light dark;
+
+  --base:      #f7f4ef;
+  --ink:       #17150f;
+  --ink-soft:  #5f584c;
+  --ink-faint: #938a7b;
+  --rule:      rgba(23,21,15,.16);
+  --rule-firm: rgba(23,21,15,.34);
+
+  /* accents used as TYPE on the page background */
+  --ventral:   #12724f;
+  --symp:      #ad5310;
+  --dorsal:    #3a4d80;
+
+  /* flat colour fields. Saturated in both themes, always with dark type on top,
+     so the poster look survives the light/dark switch without a second palette. */
+  --field-v:   #3faa7c;
+  --field-s:   #e08a2e;
+  --field-d:   #7d92cc;
+  --on-field:  #100e0a;
+
+  --serif: Georgia, "Iowan Old Style", "Palatino Linotype", "Times New Roman", serif;
+  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Helvetica, Arial, sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --base:      #0e0d0b;
+    --ink:       #f4f0e8;
+    --ink-soft:  #a79e90;
+    --ink-faint: #6b6357;
+    --rule:      rgba(244,240,232,.16);
+    --rule-firm: rgba(244,240,232,.34);
+
+    --ventral:   #4fc793;
+    --symp:      #f0913f;
+    --dorsal:    #8ba3dd;
+
+    --field-v:   #4fc793;
+    --field-s:   #f0913f;
+    --field-d:   #8ba3dd;
+  }
+}
+
+* { box-sizing: border-box; }
+
+/* `clip`, not `hidden`: hidden would make this a scroll container and, because
+   the other axis then computes to `auto`, break vertical scrolling outright. */
+html { overflow-x: clip; }
+
+body {
+  margin: 0;
+  background: var(--base);
+  color: var(--ink);
+  font-family: var(--sans);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.45;
+}
+
+section {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 9vh 6vw;
+}
+
+.rule-top { border-top: 1px solid var(--rule); }
+
+/* breaks an element out of the centred column to the full viewport width.
+   Width is left auto so the negative margins resolve it, rather than hardcoding
+   100vw and fighting the scrollbar. */
+.bleed {
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+}
+
+/* ---------- type ---------- */
+
+.eyebrow {
+  font-size: clamp(.72rem, 1.4vw, .84rem);
+  font-weight: 700;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin: 0 0 1.6rem;
+}
+
+h1 {
+  font-size: clamp(3rem, 11vw, 8rem);
+  font-weight: 800;
+  letter-spacing: -.045em;
+  line-height: .92;
+  margin: 0;
+}
+
+h2 {
+  font-size: clamp(2.1rem, 6.5vw, 4.6rem);
+  font-weight: 800;
+  letter-spacing: -.038em;
+  line-height: 1.02;
+  margin: 0 0 1.6rem;
+  max-width: 16ch;
+}
+
+.lede {
+  font-family: var(--serif);
+  font-size: clamp(1.15rem, 2.4vw, 1.7rem);
+  line-height: 1.5;
+  color: var(--ink-soft);
+  max-width: 34ch;
+  margin: 0;
+}
+
+.quote {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(1.25rem, 3.2vw, 2.2rem);
+  line-height: 1.35;
+  color: var(--ink);
+  max-width: 26ch;
+  margin: 3rem 0 .8rem;
+}
+
+.attrib {
+  font-size: .8rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  font-weight: 600;
+}
+
+.big-fact {
+  font-size: clamp(2.6rem, 9vw, 6.5rem);
+  font-weight: 800;
+  letter-spacing: -.045em;
+  line-height: 1;
+  margin: 0;
+}
+
+/* ---------- hero ---------- */
+
+.hero {
+  min-height: 92vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 8vh;
+}
+
+.hero .sub {
+  font-family: var(--serif);
+  font-size: clamp(1.1rem, 2.6vw, 1.9rem);
+  color: var(--ink-soft);
+  margin: 2.2rem 0 0;
+  max-width: 30ch;
+  line-height: 1.45;
+}
+
+/* one flush three-colour bar, hard edges */
+.colourbar {
+  display: flex;
+  margin: 3.5rem 0 0;
+  max-width: 520px;
+  height: 18px;
+}
+.colourbar span { flex: 1; }
+.colourbar span:nth-child(1) { background: var(--field-v); }
+.colourbar span:nth-child(2) { background: var(--field-s); }
+.colourbar span:nth-child(3) { background: var(--field-d); }
+
+.scrollcue {
+  margin-top: 6vh;
+  font-size: .78rem;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: .8rem;
+}
+.scrollcue i {
+  display: block; width: 1px; height: 34px;
+  background: var(--ink-faint);
+  animation: cue 2.4s ease-in-out infinite;
+  transform-origin: top;
+}
+@keyframes cue {
+  0%, 100% { transform: scaleY(.35); opacity: .4; }
+  50%      { transform: scaleY(1);   opacity: 1; }
+}
+
+/* ---------- figures ---------- */
+
+figure { margin: 0; }
+
+.fig {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 3rem auto;
+  max-width: 640px;
+  max-height: 68vh;
+  overflow: visible;
+}
+.fig.tall { max-width: 390px; }
+
+.body-outline { fill: none; stroke: var(--ink); stroke-width: 3; opacity: .18; }
+.nerve { fill: none; stroke: var(--ventral); stroke-width: 5; stroke-linecap: round; }
+.nerve.thin { stroke-width: 3.5; opacity: .8; }
+.organ { fill: var(--ventral); }
+.pulse-dot { fill: var(--symp); }
+.stroke-soft { stroke: var(--rule); }
+
+.svg-label {
+  font-family: var(--sans);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: .04em;
+  fill: var(--ink-soft);
+}
+
+.stream {
+  fill: none;
+  stroke-width: 6;
+  stroke-linecap: butt;
+  stroke-dasharray: 14 20;
+  animation: flow 1.8s linear infinite;
+}
+@keyframes flow { to { stroke-dashoffset: -34; } }
+
+/* ---------- the ladder: three flat slabs, hard edges ---------- */
+
+/* margin-top only — the `margin` shorthand would reset the left/right margins
+   that .bleed relies on, and these rules come later in the sheet. */
+.ladder { margin-top: 4rem; }
+
+.slab { color: var(--on-field); }
+.slab.v { background: var(--field-v); }
+.slab.s { background: var(--field-s); }
+.slab.d { background: var(--field-d); }
+
+.slab-inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: clamp(2rem, 4.5vw, 3.4rem) 6vw;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1rem 3rem;
+  align-items: start;
+}
+
+.slab-pos {
+  font-size: .74rem;
+  font-weight: 800;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  margin: 0 0 .9rem;
+  opacity: .62;
+}
+
+.slab h3 {
+  font-size: clamp(1.9rem, 5.5vw, 3.6rem);
+  font-weight: 800;
+  letter-spacing: -.038em;
+  line-height: 1;
+  margin: 0 0 1.1rem;
+}
+
+.slab-says {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(1.1rem, 2.6vw, 1.7rem);
+  line-height: 1.32;
+  margin: 0 0 1rem;
+  max-width: 24ch;
+}
+
+.slab-feels {
+  font-size: clamp(.92rem, 1.9vw, 1.08rem);
+  font-weight: 600;
+  margin: 0;
+  opacity: .78;
+  max-width: 46ch;
+}
+
+.slab-age {
+  font-size: .74rem;
+  font-weight: 800;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  text-align: right;
+  white-space: nowrap;
+  opacity: .62;
+  line-height: 1.7;
+}
+
+@media (max-width: 680px) {
+  .slab-inner { grid-template-columns: 1fr; }
+  .slab-age { text-align: left; }
+}
+
+/* ---------- triptych: same idea, three across ---------- */
+
+.trip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 3.5rem;
+}
+.trip > div {
+  color: var(--on-field);
+  padding: clamp(2.4rem, 4.5vw, 4rem) clamp(1.7rem, 3.4vw, 3rem);
+}
+.trip .v { background: var(--field-v); }
+.trip .s { background: var(--field-s); }
+.trip .d { background: var(--field-d); }
+
+.trip .who {
+  font-size: .74rem;
+  font-weight: 800;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  margin: 0 0 1.4rem;
+  opacity: .62;
+}
+.trip .said {
+  font-family: var(--serif);
+  font-size: clamp(1.05rem, 2.1vw, 1.45rem);
+  line-height: 1.38;
+  margin: 0;
+  max-width: 21ch;
+}
+
+@media (max-width: 760px) {
+  .trip { grid-template-columns: 1fr; }
+}
+
+/* ---------- glimmers: a hairline list, no chips ---------- */
+
+.glim {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 0 clamp(2rem, 5vw, 4.5rem);
+  margin: 3.5rem 0 0;
+}
+.glim p {
+  margin: 0;
+  padding: 1.15rem 0;
+  border-top: 1px solid var(--rule);
+  font-family: var(--serif);
+  font-size: clamp(1.02rem, 2vw, 1.22rem);
+  line-height: 1.35;
+  color: var(--ink);
+}
+
+/* ---------- four R's ---------- */
+
+.rs { margin: 3.5rem 0 0; }
+.r {
+  display: grid;
+  /* auto, not a fixed width: the column hugs the widest digit so the number
+     sits with its heading instead of stranded across ~100px of dead space. */
+  grid-template-columns: auto 1fr;
+  gap: 1.4rem clamp(1rem, 2.2vw, 1.9rem);
+  padding: clamp(1.4rem, 3vw, 2.2rem) 0;
+  border-top: 1px solid var(--rule);
+  /* centred against the whole heading-plus-description block. Baseline
+     alignment pinned the numeral to the heading and left it floating at the
+     top of the row with all the empty space below it. */
+  align-items: center;
+}
+.r:last-child { border-bottom: 1px solid var(--rule); }
+.r .num {
+  font-size: clamp(2.4rem, 7vw, 4.6rem);
+  font-weight: 800;
+  letter-spacing: -.05em;
+  line-height: .85;
+  color: var(--ventral);
+  /* proportional figures: tabular ones centre "1" in a full-width slot, so it
+     starts further right than "4" and the left margin goes ragged. */
+  font-variant-numeric: proportional-nums;
+  /* Each .r is its own grid, so an `auto` column would size per row and leave
+     the headings ragged. 1ch is the advance of "0" in this same font; the
+     headroom covers the widest digit, and it tracks any font change. */
+  min-width: 1.15ch;
+}
+.r h4 {
+  font-size: clamp(1.5rem, 3.8vw, 2.4rem);
+  font-weight: 800;
+  letter-spacing: -.03em;
+  margin: 0 0 .4rem;
+  line-height: 1;
+}
+.r p {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: clamp(1rem, 2.1vw, 1.3rem);
+  color: var(--ink-soft);
+  line-height: 1.45;
+  max-width: 40ch;
+}
+
+/* ---------- what helps: whitespace only, no boxes ---------- */
+
+.helps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: clamp(2.2rem, 4.5vw, 3.4rem) clamp(2rem, 5vw, 4.5rem);
+  margin: 3.5rem 0 0;
+}
+.help strong {
+  display: block;
+  font-size: clamp(1.15rem, 2.6vw, 1.5rem);
+  font-weight: 800;
+  letter-spacing: -.02em;
+  margin-bottom: .55rem;
+}
+.help span {
+  font-family: var(--serif);
+  color: var(--ink-soft);
+  font-size: 1.04rem;
+  line-height: 1.45;
+}
+
+/* ---------- breath ---------- */
+
+.breath {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 5.5rem 0 1rem;
+}
+.breath-stage {
+  width: min(340px, 74vw);
+  height: min(340px, 74vw);
+  display: grid;
+  place-items: center;
+  position: relative;
+}
+.breath-ring { position: absolute; inset: 0; border-radius: 50%; border: 1px solid var(--rule-firm); }
+.breath-orb {
+  width: 100%; height: 100%;
+  border-radius: 50%;
+  background: var(--field-v);
+  animation: breathe 12s infinite;
+  will-change: transform;
+}
+@keyframes breathe {
+  0%    { transform: scale(.46); animation-timing-function: cubic-bezier(.42,0,.58,1); }
+  33.3% { transform: scale(1); animation-timing-function: linear; }
+  41.7% { transform: scale(1); animation-timing-function: cubic-bezier(.42,0,.58,1); }
+  91.7% { transform: scale(.46); animation-timing-function: linear; }
+  100%  { transform: scale(.46); }
+}
+
+.breath-word {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-size: clamp(1.3rem, 3.6vw, 2rem);
+  font-weight: 800;
+  letter-spacing: -.02em;
+  color: var(--on-field);
+  opacity: 0;
+}
+.breath-word.w1 { animation: w1 12s infinite; }
+.breath-word.w2 { animation: w2 12s infinite; }
+.breath-word.w3 { animation: w3 12s infinite; }
+.breath-word.w4 { animation: w4 12s infinite; }
+@keyframes w1 { 0%,30% {opacity:1} 33%,100% {opacity:0} }
+@keyframes w2 { 0%,33% {opacity:0} 35%,40% {opacity:1} 42%,100% {opacity:0} }
+@keyframes w3 { 0%,42% {opacity:0} 45%,89% {opacity:1} 92%,100% {opacity:0} }
+@keyframes w4 { 0%,92% {opacity:0} 94%,99% {opacity:1} 100% {opacity:0} }
+
+.breath-caption {
+  margin-top: 2.5rem;
+  font-size: .8rem;
+  font-weight: 700;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+/* ---------- co-regulation waves ---------- */
+
+.wave {
+  fill: none;
+  stroke: var(--ventral);
+  stroke-width: 5;
+  stroke-linecap: round;
+  opacity: 0;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: ripple 3s ease-out infinite;
+}
+@keyframes ripple {
+  0%   { opacity: 0; transform: scaleX(.4); }
+  25%  { opacity: .9; }
+  100% { opacity: 0; transform: scaleX(1.06); }
+}
+
+/* ---------- sources ---------- */
+
+.sources { padding-bottom: 16vh; }
+.sources ul { list-style: none; padding: 0; margin: 2.5rem 0 0; }
+.sources li {
+  padding: 1.1rem 0;
+  border-top: 1px solid var(--rule);
+  font-size: 1.02rem;
+}
+.sources li:last-child { border-bottom: 1px solid var(--rule); }
+.sources .caveat {
+  margin: 2.6rem 0 0;
+  font-family: var(--serif);
+  font-size: 1rem;
+  line-height: 1.55;
+  color: var(--ink-faint);
+  max-width: 60ch;
+}
+.sources a { color: var(--ink); text-decoration-color: var(--ink-faint); text-underline-offset: 4px; }
+.sources a:hover { color: var(--ventral); }
+.sources em { color: var(--ink-soft); font-family: var(--serif); }
+
+@media (prefers-reduced-motion: reduce) {
+  .breath-orb, .breath-word, .stream, .wave, .scrollcue i { animation: none !important; }
+  .breath-orb { transform: scale(.85); }
+  .breath-word.w1 { opacity: 1; }
+}
+
+/* ---------- site index ---------- */
+
+.index-list { margin: 5rem 0 0; border-bottom: 1px solid var(--rule); }
+
+.entry {
+  display: block;
+  padding: clamp(2rem, 4vw, 3.2rem) 0;
+  border-top: 1px solid var(--rule);
+  color: inherit;
+  text-decoration: none;
+}
+.entry h2 {
+  font-size: clamp(1.7rem, 4.6vw, 3.2rem);
+  margin: 0 0 .7rem;
+  max-width: 20ch;
+  transition: color .18s ease;
+}
+.entry:hover h2 { color: var(--ventral); }
+.entry-sub {
+  font-family: var(--serif);
+  font-size: clamp(1.02rem, 2.1vw, 1.35rem);
+  line-height: 1.45;
+  color: var(--ink-soft);
+  margin: 0 0 .9rem;
+  max-width: 46ch;
+}
+.entry-meta {
+  font-size: .74rem;
+  font-weight: 800;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin: 0;
+}
+
+/* back-link on an explainer page */
+.backlink {
+  display: inline-block;
+  margin-bottom: 3rem;
+  font-size: .76rem;
+  font-weight: 700;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  text-decoration: none;
+}
+.backlink:hover { color: var(--ventral); }
