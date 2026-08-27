@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- The landing page's breathing orb: a disc inside a thin ring. Colours follow
+       the browser's scheme so the ring reads on a light tab bar and a dark one. -->
+  <style>
+    .ring { fill: none; stroke: rgba(23,21,15,.42); stroke-width: 2; }
+    .orb  { fill: #3faa7c; }
+    @media (prefers-color-scheme: dark) {
+      .ring { stroke: rgba(244,240,232,.42); }
+      .orb  { fill: #4fc793; }
+    }
+  </style>
+  <circle class="ring" cx="32" cy="32" r="30"/>
+  <circle class="orb" cx="32" cy="32" r="19"/>
+</svg>
