@@ -91,6 +91,19 @@ section {
   margin: 0 0 1.6rem;
 }
 
+/* the therapy's name as people say it — "EMDR", "Polyvagal theory" — set above the
+   h1 on a page and the h3 on a shelf slab, so the term is the first thing read and
+   the claim comes second. The originator's name lives in the eyebrow above it. */
+.term {
+  font-size: clamp(1.5rem, 3.4vw, 2.4rem);
+  font-weight: 800;
+  letter-spacing: -.02em;
+  line-height: 1;
+  margin: 0 0 1.2rem;
+  color: var(--accent-a);
+}
+.shelf-slab .term { color: var(--on-field); opacity: .82; margin-bottom: 1rem; }
+
 h1 {
   font-size: clamp(3rem, 11vw, 8rem);
   font-weight: 800;

@@ -60,10 +60,11 @@ if (!slabs.length) throw new Error("no shelf slabs found in public/index.html");
 
 const SLAB_STYLE = `
 .shelf-slab { display: block; width: 1200px; height: 630px; }
-.shelf-inner { max-width: none; height: 630px; padding: 60px 84px; gap: 0 64px; align-items: center; }
-.slab-pos { font-size: 22px; letter-spacing: .2em; margin: 0 0 28px; }
-.shelf-slab h3 { font-size: 86px; max-width: 11ch; margin: 0 0 30px; text-decoration: none; }
-.shelf-sub { font-size: 28px; line-height: 1.35; max-width: 30ch; margin: 0; }
+.shelf-inner { max-width: none; height: 630px; padding: 48px 84px; gap: 0 64px; align-items: center; }
+.slab-pos { font-size: 21px; letter-spacing: .2em; margin: 0 0 18px; }
+.term { font-size: 40px; margin: 0 0 18px; }
+.shelf-slab h3 { font-size: 78px; max-width: 12ch; margin: 0 0 24px; text-decoration: none; }
+.shelf-sub { font-size: 25px; line-height: 1.3; max-width: 36ch; margin: 0; }
 .shelf-go { display: none; }
 .glyph { width: 330px; }`;
 
