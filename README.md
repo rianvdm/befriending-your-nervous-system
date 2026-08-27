@@ -1,4 +1,4 @@
-# Explainers
+# What that therapy word means
 
 Visual, beginner-level introductions to psychology and therapy concepts. One idea per page, big pictures, few words, and nothing assumed about what the reader already knows.
 
@@ -6,16 +6,17 @@ Visual, beginner-level introductions to psychology and therapy concepts. One ide
 
 | Page | Subject |
 |---|---|
-| `/` | Site index |
-| `/polyvagal/` | **Befriending your nervous system** — Deb Dana on Polyvagal Theory: the vagus nerve and where its traffic actually flows, neuroception, the three-rung ladder, why you climb it in order, "story follows state", co-regulation, glimmers, and the four R's |
-| `/brainspotting/` | **Where you look affects how you feel** — David Grand's Brainspotting: the 2003 discovery, the orienting reflex, what a brainspot is, the three ways of finding one, what a session actually consists of, the dual attunement frame, and how well the method stands up |
+| `/` | Landing page: the site name, a welcome, and one colour slab per explainer |
+| `/ifs/` | **There are no bad parts** — Richard Schwartz's Internal Family Systems: parts as a family, the three jobs they take (managers, firefighters, exiles), the rule that protectors go first, the Self, blending, and what a session does |
 | `/emdr/` | **A memory that never got filed** — Francine Shapiro's EMDR: the unprocessed-memory model, what happens in a session, what changes, whether the eye movements matter, and the full eight-phase practice |
+| `/brainspotting/` | **Where you look affects how you feel** — David Grand's Brainspotting: the 2003 discovery, the orienting reflex, what a brainspot is, the three ways of finding one, what a session actually consists of, the dual attunement frame, and how well the method stands up |
+| `/polyvagal/` | **Befriending your nervous system** — Deb Dana on Polyvagal Theory: the vagus nerve and where its traffic actually flows, neuroception, the three-rung ladder, why you climb it in order, "story follows state", co-regulation, glimmers, and the four R's |
 
 ## What's here
 
 ```
 public/
-  index.html            site index; one <a class="entry"> per explainer
+  index.html            landing page; one <a class="shelf-slab"> per explainer
   assets/explainer.css  the entire design system, shared by every page
   assets/explainer.js   reduced-motion handling for inline SVG animation
   <slug>/index.html     one explainer

@@ -574,40 +574,136 @@ figure { margin: 0; }
   .wave { opacity: .7; transform: none; }
 }
 
-/* ---------- site index ---------- */
+/* ---------- landing page ---------- */
 
-.index-list { margin: 5rem 0 0; border-bottom: 1px solid var(--rule); }
+/* the landing page hero: text on the left, the breathing orb on the right.
+   `display: grid` replaces .hero's flex column, so vertical centring comes
+   from align-content instead of justify-content. */
+.hero-split {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 3rem clamp(2rem, 6vw, 6rem);
+  align-items: center;
+  align-content: center;
+  /* no 92vh floor and tighter padding: the whole hero has to sit above the
+     fold so the first slab's intro is visible on arrival */
+  min-height: 0;
+  padding-top: 6vh;
+  padding-bottom: 5vh;
+}
+/* the text column shares the row with the orb, so the h1 steps down one size
+   from the explainer pages' 8rem cap; "therapy word" has to hold on one line. */
+.hero-split h1 { font-size: clamp(2.8rem, 8vw, 6.2rem); }
+.hero-split .sub { max-width: 40ch; }
+.hero-orb .breath-stage {
+  width: min(320px, 32vw);
+  height: min(320px, 32vw);
+}
+.hero-orb .breath-orb { animation-duration: 14s; }
+/* the orb hangs out past the column's right edge, into the space the page
+   leaves free beside the 1080px column, so the text column keeps its width
+   and its left edge lines up with every section below. The overhang is capped
+   at that free space, so it is zero once the viewport is the column's width. */
+.hero-orb { margin-right: calc(-1 * clamp(0px, (100vw - 1080px) / 2, 160px)); }
+/* no scroll cue on the landing page: the first section's rule is already on
+   screen, which is the cue */
+.hero-split .colourbar { margin-top: 2.6rem; }
 
-.entry {
+@media (max-width: 760px) {
+  .hero-split { grid-template-columns: 1fr; gap: 1.5rem; }
+  /* on a phone the orb sits above the headline, like a mark, rather than
+     stranded under the scroll cue */
+  .hero-orb { order: -1; justify-self: start; margin-right: 0; }
+  .hero-orb .breath-stage { width: 140px; height: 140px; }
+}
+
+/* the intro above the shelf sits flush on the first slab */
+.shelf-intro { padding-bottom: 0; }
+
+/* the shelf: one full-bleed colour slab per explainer, the whole slab a link.
+   margin-top only, so .bleed keeps its side margins. */
+.shelf { margin-top: 3.5rem; }
+
+.shelf-slab {
   display: block;
-  padding: clamp(2rem, 4vw, 3.2rem) 0;
-  border-top: 1px solid var(--rule);
-  color: inherit;
+  color: var(--on-field);
   text-decoration: none;
 }
-.entry h2 {
-  font-size: clamp(1.7rem, 4.6vw, 3.2rem);
-  margin: 0 0 .7rem;
-  max-width: 20ch;
-  transition: color .18s ease;
+.shelf-slab.a { background: var(--field-a); }
+.shelf-slab.b { background: var(--field-b); }
+.shelf-slab.c { background: var(--field-c); }
+
+.shelf-inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: clamp(2.4rem, 5vw, 4rem) 6vw;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1rem clamp(2rem, 5vw, 4.5rem);
+  align-items: center;
 }
-.entry:hover h2 { color: var(--accent-a); }
-.entry-sub {
+
+.shelf-slab h3 {
+  font-size: clamp(1.9rem, 5.5vw, 3.6rem);
+  font-weight: 800;
+  letter-spacing: -.038em;
+  line-height: 1;
+  margin: 0 0 1.1rem;
+  max-width: 14ch;
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-decoration-thickness: .06em;
+  text-underline-offset: .14em;
+  transition: text-decoration-color .18s ease;
+}
+.shelf-slab:hover h3 { text-decoration-color: currentColor; }
+
+.shelf-sub {
   font-family: var(--serif);
-  font-size: clamp(1.02rem, 2.1vw, 1.35rem);
-  line-height: 1.45;
-  color: var(--ink-soft);
-  margin: 0 0 .9rem;
-  max-width: 46ch;
+  font-size: clamp(1.05rem, 2.2vw, 1.45rem);
+  line-height: 1.4;
+  margin: 0 0 1.4rem;
+  max-width: 34ch;
+  opacity: .82;
 }
-.entry-meta {
-  font-size: .74rem;
+
+.shelf-go {
+  font-size: .76rem;
   font-weight: 800;
   letter-spacing: .16em;
   text-transform: uppercase;
-  color: var(--ink-faint);
   margin: 0;
+  opacity: .72;
 }
+.shelf-go::after { content: " \2192"; }
+
+.glyph {
+  width: clamp(150px, 24vw, 240px);
+  height: auto;
+  display: block;
+  overflow: visible;
+}
+
+@media (max-width: 680px) {
+  .shelf-inner { grid-template-columns: 1fr; }
+  .glyph { width: 150px; margin-top: .6rem; }
+}
+
+/* the sign-off at the foot of the landing page */
+.about { padding-bottom: 16vh; }
+.about .lede { max-width: 44ch; }
+.about .lede a { color: inherit; text-decoration-color: var(--ink-faint); text-underline-offset: 4px; }
+.about .lede a:hover { color: var(--accent-a); }
+.about-links {
+  margin: 2.2rem 0 0;
+  font-size: .8rem;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.about-links a { color: inherit; text-decoration: none; }
+.about-links a:hover { color: var(--accent-a); }
 
 /* back-link on an explainer page */
 .backlink {
