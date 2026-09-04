@@ -2,7 +2,7 @@
 
 Visual, beginner-level introductions to psychology and therapy concepts. One idea per page, big pictures, few words, and nothing assumed about what the reader already knows.
 
-**Live:** https://therapywords.elezea.com (also at https://befriending-your-nervous-system.rian-db8.workers.dev)
+**Live:** https://therapy-words.com (also at https://befriending-your-nervous-system.rian-db8.workers.dev)
 
 | Page | Subject |
 |---|---|
@@ -47,7 +47,7 @@ The CSS is linked at an absolute path (`/assets/explainer.css`), so opening a pa
 npx wrangler deploy
 ```
 
-Deploys to the personal Cloudflare account, on the custom domain `therapywords.elezea.com` (the `routes` entry in `wrangler.jsonc`; `workers_dev: true` keeps the original hostname serving as well). Because there is no `main` script, this is an assets-only Worker: Cloudflare serves `public/` directly and no Worker code runs. `html_handling` defaults to `auto-trailing-slash`, so `/brainspotting` 307-redirects to `/brainspotting/`.
+Deploys to the personal Cloudflare account, on the custom domain `therapy-words.com` (the `routes` entry in `wrangler.jsonc`; `workers_dev: true` keeps the original hostname serving as well, and `therapywords.elezea.com`, the previous home, is a 301 redirect rule on the elezea.com zone). Because there is no `main` script, this is an assets-only Worker: Cloudflare serves `public/` directly and no Worker code runs. `html_handling` defaults to `auto-trailing-slash`, so `/brainspotting` 307-redirects to `/brainspotting/`.
 
 ## Share images, favicon, sitemap
 

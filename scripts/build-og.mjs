@@ -17,7 +17,7 @@ import { join, resolve } from "node:path";
 const ROOT = resolve(new URL("..", import.meta.url).pathname);
 const PUBLIC = join(ROOT, "public");
 const CSS = `file://${join(PUBLIC, "assets", "explainer.css")}`;
-const SITE = "https://therapywords.elezea.com";
+const SITE = "https://therapy-words.com";
 const CHROME = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome";
 
 const work = mkdtempSync(join(tmpdir(), "og-"));

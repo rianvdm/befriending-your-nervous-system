@@ -3,12 +3,13 @@
   // is only valid alongside a Worker script.
   "name": "befriending-your-nervous-system",
   "compatibility_date": "2026-08-25",
-  // Custom domain on the elezea.com zone (same account). Deploy creates the DNS
-  // record and certificate; the workers.dev hostname keeps serving too, and every
-  // page's canonical tag points here.
+  // Custom domain on the therapy-words.com zone (same account). Deploy creates the
+  // DNS record and certificate; the workers.dev hostname keeps serving too, and
+  // every page's canonical tag points here. The old host, therapywords.elezea.com,
+  // is a 301 to this one via a redirect rule on the elezea.com zone, not a route.
   "workers_dev": true,
   "routes": [
-    { "pattern": "therapywords.elezea.com", "custom_domain": true }
+    { "pattern": "therapy-words.com", "custom_domain": true }
   ],
   "assets": {
     "directory": "./public"
